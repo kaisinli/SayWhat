@@ -1,0 +1,1 @@
+export const GOOGLE_APPLICATION_CREDENTIALS = './Say-What-3aa99a7d148a.json'
