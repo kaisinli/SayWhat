@@ -1,10 +1,10 @@
 'use strict';
 var webpack = require('webpack');
 module.exports = {
-  entry: './browser/app.js',
+  entry: './browser/Routes.js',
   output: {
     path: __dirname,
-    filename: './build/bundle.js'
+    filename: './public/bundle.js'
   },
   context: __dirname,
   devtool: 'source-map',

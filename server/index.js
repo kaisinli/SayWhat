@@ -14,22 +14,26 @@ const language = Language({
 
 
 //serves up static files
-//app.use('/files', express.static(path.join(__dirname, 'public/static')));
+// app.use('*', express.static(path.join(__dirname, 'public')));
 
 //body-parsing
 app.use('/', bodyParser.json());
 app.use('/', bodyParser.urlencoded({ extended: true }));
 
-app.use('/', express.static(path.join(__dirname, 'public')))
+console.log(__dirname)
+app.use(express.static('/Users/kaisinli/Desktop/FSA April 2017/SayWhat/public'));
 
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/index.html'))
+// app.use(express.static('public'))
+
+app.get('*', function (req, res) {
+    console.log('HELLO')
+    res.sendFile('/Users/kaisinli/Desktop/FSA April 2017/SayWhat/public')
 })
 
 app.post('/api/text', (req, res, next) => {
     // The text to analyze
-    console.log('REQ.BODY ==========', req.body)
-    const text = req.body;
+    console.log('REQ.BODY.CONTENT ==========', req.body.content)
+    const text = req.body.content;
     // Detects the sentiment of the text
     language.detectSentiment(text)
         .then((results) => {
@@ -37,11 +41,14 @@ app.post('/api/text', (req, res, next) => {
             console.log(`Text: ${text}`);
             console.log(`Sentiment score: ${sentiment.score}`);
             console.log(`Sentiment magnitude: ${sentiment.magnitude}`);
+            console.log(`${sentiment}`)
+            res.send(sentiment)
         })
         .catch((err) => {
             console.error('ERROR:', err);
         });
 })
+
 app.listen(3000, () => console.log('Listening on port 3000'))
 
 module.exports = app;
