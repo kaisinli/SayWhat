@@ -3,12 +3,11 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 
 const Output = (props) => {
- {console.log("we are in Output")}
     return (
         <div>
-            <h2> Result </h2>
-            <h4>Magnitude is {props.mag}</h4>
-            <h4>Niceness score is {props.score}</h4>
+            <h2>Result</h2>
+            <h4>Sentiment Score is {props.score}</h4>
+            <h4>Sentiment Magnitude is {props.mag}</h4>
         </div>
     )
 

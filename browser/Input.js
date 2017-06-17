@@ -7,7 +7,6 @@ import Output from './Output'
 class Input extends React.Component {
     constructor(props) {
         super(props)
-
         this.submitHandler = this.submitHandler.bind(this)
     }
     submitHandler(event) {
@@ -17,20 +16,24 @@ class Input extends React.Component {
         }
         this.props.fetchText(text)
     }
+
     render() {
-        {console.log(this.props, "props!!")}
         return (
-            <div>
-                <h1> SAY WHAT? </h1>
+            <div className="container">
+                <h1 size = "200"> SAY WHAT? </h1>
+                <style>
+                    
+                </style>
                 <form onSubmit={this.submitHandler}>
                     <div className="form-group">
-                        <input name="text" type="text" className="form-control" placeholder="Say This" />
+                        <textarea name="text" rows="10" className="form-control" placeholder="Say This" />
+                        <br/>
                         <button className="btn" type="submit">SAY THIS</button>
                     </div>
                 </form>
                 <Output mag={this.props.text.magnitude} score={this.props.text.score} />
             </div>
-        )
+        ) 
     }
 
 

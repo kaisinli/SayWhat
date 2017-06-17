@@ -6,35 +6,33 @@ const initialState = {
   analysis: {}
 }
 
-/* ------------------------ REDUCER ------------------------ */
+/* -------------------------- REDUCER --------------------------- */
 const reducer = (state = initialState, action) => {
   const newState = Object.assign({}, state)
   switch (action.type) {
   case GET_TEXT:
-    console.log('ACTION.TEXT', action.text)
     return Object.assign({}, newState, {text: action.text})
   default:
     return state
   }
 }
 
-/* ------------------------ ACTIONS ------------------------ */
+/* --------------------------- ACTIONS -------------------------- */
 const GET_TEXT = 'GET_TEXT'
 
-/* -------------------- ACTION CREATOR --------------------- */
+/* ---------------------- ACTION CREATOR ------------------------ */
 export const getText = text =>   {
-  console.log('IN ACTION CREATOR')
   return {
   type: GET_TEXT, text
   }
 }
 
-/* ----------------------- DISPATCHER ------------------------ */
+/* ------------------------- DISPATCHER -------------------------- */
 export const fetchText = (text) =>
   dispatch =>
     axios.post('/api/text', text)
       .then(res => {
-        console.log(res.data)
+        console.log('RES.DATA', res.data)
         return dispatch(getText(res.data))
       })
       .catch(err => console.error('Fetching text unsuccessful', err))
