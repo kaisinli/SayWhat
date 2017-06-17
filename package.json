@@ -15,6 +15,7 @@
     "skeleton"
   ],
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "bootstrap-social": "^5.0.0",
@@ -30,7 +31,7 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.7.0",
     "redux-thunk": "^2.1.0",
-    "sequelize": "^3.24.6"
+    "sequelize": "^3.30.4"
   },
   "devDependencies": {
     "babel": "^6.5.2",

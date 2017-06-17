@@ -29343,10 +29343,11 @@
 	    function Input(props) {
 	        _classCallCheck(this, Input);
 	
-	        var _this = _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this, props));
+	        var _this
+	        //this.toDisplay = this.toDisplay.bind(this)
+	        = _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this, props));
 	
-	        _this.submitHandler = _this.submitHandler.bind(_this);
-	        return _this;
+	        _this.submitHandler = _this.submitHandler.bind(_this);return _this;
 	    }
 	
 	    _createClass(Input, [{
@@ -29358,6 +29359,11 @@
 	            };
 	            this.props.fetchText(text);
 	        }
+	
+	        // toDisplay(num) {
+	        //     return num.toFixed(2)
+	        // }
+	
 	    }, {
 	        key: 'render',
 	        value: function render() {
@@ -29366,10 +29372,9 @@
 	                { className: 'container' },
 	                _react2.default.createElement(
 	                    'h1',
-	                    { size: '200' },
+	                    { className: 'display-4' },
 	                    ' SAY WHAT? '
 	                ),
-	                _react2.default.createElement('style', null),
 	                _react2.default.createElement(
 	                    'form',
 	                    { onSubmit: this.submitHandler },
@@ -29377,11 +29382,10 @@
 	                        'div',
 	                        { className: 'form-group' },
 	                        _react2.default.createElement('textarea', { name: 'text', rows: '10', className: 'form-control', placeholder: 'Say This' }),
-	                        _react2.default.createElement('br', null),
 	                        _react2.default.createElement(
 	                            'button',
-	                            { className: 'btn', type: 'submit' },
-	                            'SAY THIS'
+	                            { style: { "margin": "10px" }, className: 'btn btn-lg btn-primary', type: 'submit' },
+	                            'Sentiment'
 	                        )
 	                    )
 	                ),
@@ -31018,21 +31022,25 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	            'h2',
+	            'div',
 	            null,
-	            'Result'
-	        ),
-	        _react2.default.createElement(
-	            'h4',
-	            null,
-	            'Sentiment Score is ',
-	            props.score
-	        ),
-	        _react2.default.createElement(
-	            'h4',
-	            null,
-	            'Sentiment Magnitude is ',
-	            props.mag
+	            _react2.default.createElement(
+	                'h2',
+	                null,
+	                'Results'
+	            ),
+	            _react2.default.createElement(
+	                'h4',
+	                null,
+	                'Sentiment Score: ',
+	                props.score
+	            ),
+	            _react2.default.createElement(
+	                'h4',
+	                null,
+	                'Sentiment Magnitude: ',
+	                props.mag
+	            )
 	        )
 	    );
 	};

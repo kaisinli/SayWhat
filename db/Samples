@@ -1,0 +1,8 @@
+'use strict'
+
+const {FLOAT} = require('sequelize')
+
+module.exports = db => db.define('samples', {
+  score: FLOAT,
+  magnitude: FLOAT
+})

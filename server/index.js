@@ -12,20 +12,19 @@ const language = Language({
     projectId: projectId
 });
 
-//serves up static files
-// app.use('*', express.static(path.join(__dirname, 'public')));
-
+//----------------------------------------------------------------------------------------------------
 //body-parsing
 app.use('/', bodyParser.json());
 app.use('/', bodyParser.urlencoded({ extended: true }));
 
+//serves up static files
 app.use(express.static('/Users/kaisinli/Desktop/FSA April 2017/SayWhat/public'));
-
-// app.use(express.static('public'))
 
 app.get('*', function (req, res) {
     res.sendFile('/Users/kaisinli/Desktop/FSA April 2017/SayWhat/public')
 })
+
+//-----------------------------natural language api POST----------------------------------------
 
 app.post('/api/text', (req, res, next) => {
     // The text to analyze
@@ -45,6 +44,8 @@ app.post('/api/text', (req, res, next) => {
             console.error('ERROR:', err);
         });
 })
+
+//----------------------------------------------------------------------------------------------------
 
 app.listen(3000, () => console.log('Listening on port 3000'))
 

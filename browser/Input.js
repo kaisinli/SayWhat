@@ -8,6 +8,7 @@ class Input extends React.Component {
     constructor(props) {
         super(props)
         this.submitHandler = this.submitHandler.bind(this)
+        //this.toDisplay = this.toDisplay.bind(this)
     }
     submitHandler(event) {
         event.preventDefault()
@@ -17,18 +18,18 @@ class Input extends React.Component {
         this.props.fetchText(text)
     }
 
+    // toDisplay(num) {
+    //     return num.toFixed(2)
+    // }
+
     render() {
         return (
             <div className="container">
-                <h1 size = "200"> SAY WHAT? </h1>
-                <style>
-                    
-                </style>
+                <h1 className="display-4"> SAY WHAT? </h1>
                 <form onSubmit={this.submitHandler}>
                     <div className="form-group">
                         <textarea name="text" rows="10" className="form-control" placeholder="Say This" />
-                        <br/>
-                        <button className="btn" type="submit">SAY THIS</button>
+                        <button style={{"margin" : "10px"}} className="btn btn-lg btn-primary" type="submit">Sentiment</button>
                     </div>
                 </form>
                 <Output mag={this.props.text.magnitude} score={this.props.text.score} />

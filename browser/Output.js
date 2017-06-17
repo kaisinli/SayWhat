@@ -5,12 +5,13 @@ import { connect } from 'react-redux'
 const Output = (props) => {
     return (
         <div>
-            <h2>Result</h2>
-            <h4>Sentiment Score is {props.score}</h4>
-            <h4>Sentiment Magnitude is {props.mag}</h4>
+            <div>
+                <h2>Results</h2>
+                <h4>Sentiment Score: {props.score}</h4>
+                <h4>Sentiment Magnitude: {props.mag}</h4>
+            </div>
         </div>
     )
-
 }
 
 const mapStateToProps = ({text}) => ({ text })
