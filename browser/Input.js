@@ -16,8 +16,11 @@ console.log(fetchText)
 class Input extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+      showComponent: false
+    }
         this.submitHandler = this.submitHandler.bind(this)
-        //this.clickHandler = this.clickHandler.bind(this)
+        this.clickHandler = this.clickHandler.bind(this)
 
     }
     submitHandler(event) {
@@ -28,12 +31,18 @@ class Input extends React.Component {
         }
         this.props.fetchText(text)
     }
-    // clickHandler() {
+    clickHandler() {
 
-    //     console.log("TSTS")
-    //     store.dispatch(this.props.buttonClick())
-    //     console.log("!")
-    // }
+        console.log("TSTS")
+        //store.dispatch(this.props.buttonClick())
+        if (this.state.showComponent === false)
+        this.setState({showComponent: true});
+    else
+                this.setState({showComponent: false});
+
+
+        console.log(this.state)
+    }
 
     render() {{
         console.log(this.props, "props")
@@ -52,8 +61,11 @@ class Input extends React.Component {
                     </div>
                 </form>
                 <Output mag={this.props.text.magnitude} score={this.props.text.score} />
+                <button  className="btn" onClick={() => this.clickHandler()}>Start</button>
+                {this.state.showComponent === true ?
+                    <Dict />
+                : null}
 
-                <Dict />
             </div>
         )
     }
@@ -61,7 +73,7 @@ class Input extends React.Component {
 
 }
 
-const mapDispatchToProps = { fetchText}
-const mapStateToProps = ({text}) => ({text})
+const mapDispatchToProps = { fetchText, buttonClick}
+const mapStateToProps = ({text, showComponent}) => ({text, showComponent})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Input)

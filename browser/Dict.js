@@ -1,5 +1,8 @@
 import React, { PropTypes, Component } from 'react'
 import SpeechRecognition from 'react-speech-recognition'
+import { fetchText, buttonClick } from './reducers'
+import { connect } from 'react-redux'
+
 
 const propTypes = {
   // Props injected by SpeechRecognition
@@ -9,6 +12,18 @@ const propTypes = {
 }
 
 class Dictaphone extends Component {
+  constructor(props){
+    super(props)
+  this.clickHandler = this.clickHandler.bind(this)
+
+  }
+  clickHandler(sentence){
+   console.log(sentence)
+   const text = {
+            content: sentence.transcript
+        }
+    this.props.fetchText(text)
+  }
   render() {
     const { transcript, resetTranscript, browserSupportsSpeechRecognition } = this.props
 
@@ -20,6 +35,7 @@ class Dictaphone extends Component {
       <div>
         <button onClick={resetTranscript}>Reset</button>
         <span>{transcript}</span>
+        <button onClick={() =>this.clickHandler({transcript})}>Stop</button>
       </div>
     )
   }
@@ -27,4 +43,9 @@ class Dictaphone extends Component {
 
 Dictaphone.propTypes = propTypes
 
-export default SpeechRecognition(Dictaphone)
+
+const mapDispatchToProps = { fetchText}
+const mapStateToProps = ({text}) => ({text})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SpeechRecognition(Dictaphone))
+
