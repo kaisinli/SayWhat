@@ -1,28 +1,48 @@
 import React from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import { fetchText } from './reducers'
+import { fetchText, buttonClick } from './reducers'
 import Output from './Output'
+import SpeechRecognition from 'react-speech-recognition'
+import store from './store'
 
+import Dict from './Dict'
+
+
+
+
+
+console.log(fetchText)
 class Input extends React.Component {
     constructor(props) {
         super(props)
         this.submitHandler = this.submitHandler.bind(this)
+        //this.clickHandler = this.clickHandler.bind(this)
+
     }
     submitHandler(event) {
         event.preventDefault()
+        console.log("event", event.target.text.value, this.props.fetchText)
         const text = {
             content: event.target.text.value
         }
         this.props.fetchText(text)
     }
+    // clickHandler() {
 
-    render() {
+    //     console.log("TSTS")
+    //     store.dispatch(this.props.buttonClick())
+    //     console.log("!")
+    // }
+
+    render() {{
+        console.log(this.props, "props")
+    }
         return (
             <div className="container">
                 <h1 size = "200"> SAY WHAT? </h1>
                 <style>
-                    
+
                 </style>
                 <form onSubmit={this.submitHandler}>
                     <div className="form-group">
@@ -32,14 +52,16 @@ class Input extends React.Component {
                     </div>
                 </form>
                 <Output mag={this.props.text.magnitude} score={this.props.text.score} />
+
+                <Dict />
             </div>
-        ) 
+        )
     }
 
 
 }
 
-const mapDispatchToProps = { fetchText }
+const mapDispatchToProps = { fetchText}
 const mapStateToProps = ({text}) => ({text})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Input)

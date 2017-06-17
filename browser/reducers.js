@@ -31,10 +31,11 @@ export const getText = text =>   {
 export const fetchText = (text) =>
   dispatch =>
     axios.post('/api/text', text)
-      .then(res => {
-        console.log('RES.DATA', res.data)
-        return dispatch(getText(res.data))
-      })
+      .then(res =>
+         dispatch(getText(res.data))
+      )
       .catch(err => console.error('Fetching text unsuccessful', err))
+
+
 
 export default reducer

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "summer-flux-170815",
+  "private_key_id": "ab07f89b6e00b208600c8da8780fb4a0b9fb7de8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDOh73uvPm9enQh\nDbBgiUIkSbe/80E0qtFcVYeamw65YVwzvnH+8PRwB0iV+nlghoYm5TrUlh56SWSV\n08zQNj7aIrqPQkyzlr4nmUj5YxM2FBEK/YAHLjwTeSSf1qdWvG4EqytsgLxUZ662\n0lKqNRO6fgoBho+4Or27B+xgUSNF4LH257dhpxN4oIjh9+M9iv6TKkpLHl5mZnLb\n5lCq03t0ceM5R+Z6r6269eSR6IBm8O0+/bUisPQctyHOIjt+5OzvNsvcZFF+1iUE\nbR8mVW6LHQjSY5uGZ6vevHDM7SbFbCZUL8PwfA/0XN3Nkzwz9Jc9ThWLiiIXZliI\nwrqNcFA5AgMBAAECggEAFqKodaW3DmYBG81LBy2L9vuwXKSNwTa2hvLlz5NOeBFc\nYFxvVIR2md+mfC+NRX/A7LrjaYDBeuAX2tbxg+FqHpC/VyuqSeWL1j210oViCeOF\noal6cm8GDRFSKwWE5hv1R+Q1uGjcmziY3Lcs8bQrAx3EvXmQv12KxVifNsg1wDbn\ndC65b1ivJZk5pAe2NjvSBcAjXCXOoaOdqteWCWZzKNq8EtRCuEprhOkHstWryCQb\nASuxGTOqbSoQbEmh8936REpJkJD9oCe5hfE0RyBr4t9QuFxVKjtk8TESqyUD5h4G\nD4mv083lrTIsG9JpMHDAGdyRBNMM4aYluIbniqK1oQKBgQD0HtckPx5SmQK5xN2o\nu1Jv0YrAmcdFLNOfizYSWzcJ74HO3QAnu/AUMwUkeJXmOl8Blkg4/kcrwzxVeWkO\nfIgJOfQCSXGHaD210q2VhvftEG3SNLVPby2iHRmJXAH6K1BqPLqbzqiaAXlmIuvs\nRUaaIg4Cwz0NlzI/jnncM4EtyQKBgQDYlJ3nnD5oGYLEUHUYbdC59+zkgSyodXfe\ntn8m/k5BBNkX/BLMeVUsecxSS0Khhdh+SzmB2Tyu70dmm6onTDsvqsxgIq+00Hfj\nR6Q2AYf4tJ7Z0YcSzfSqbDafeWmXUvZ+FUZUUXzfKpwRWb93rWM4r2mijY/2PlH4\nJWolVnWG8QKBgQCom9h6t4GpCPfB+UAjt2Xjx3WvO0dP9vsfedZZ7Vhha2RbzXa6\n+uqB+Q83NnZKMszF2td9Tds4VbuJSbcPA2IuBTIMlk9sd8oPmDi+Sx9YRH2lrzP/\nbkm1a6XkooDXGi2LgvBchusam6QOsFYEtYBjGtxUeibkCSbykOSH+6bgSQKBgGOA\nW89VpAI1fjNs928CvLtDoQ0WH4tBdJHYbDBg81jBvm9betOABtaJGorQUstcb6sO\nKlxyjoOcIMSOTa0CQ8rRgFXGeczrXbkIZ/P73hkv+i7+KT1Fa9uEHdBEenNwRRiF\n86q3SVRKAiuifOmhug0H4dMxkGtEFGqZ3dtLjnExAoGAWWgir46vgwlQa2WjocP7\nA6uGvm3tQJSYQR+Enlx5ji7yGjIbGEt/LhBbDgOJJKbSFd/w7t40bIPYUzWpIRw6\nRgVm3gpGOWsypMq9a4aSlBrQPXcjP/mkvKYjDwMyW3jOOtnVjkTtTGi2ED81Qr6A\nXUsGhPaFgojsu2mf5av2thI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ketti-302@summer-flux-170815.iam.gserviceaccount.com",
+  "client_id": "106274586280928094288",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ketti-302%40summer-flux-170815.iam.gserviceaccount.com"
+}
