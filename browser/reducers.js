@@ -4,12 +4,10 @@ import { browserHistory } from 'react-router'
 const initialState = {
   text: {magnitude : '', score: ''},
   analysis: {},
-  showComponent : false   //added new key : value
+  showComponent : false
 }
 
 /* -------------------------- REDUCER --------------------------- */
-
-/* I added a CLICK action so that showComponent can change between true flase and render Dict compoennt based on truthy falsy values*/
 const reducer = (state = initialState, action) => {
 
   const newState = Object.assign({}, state)
@@ -17,12 +15,13 @@ const reducer = (state = initialState, action) => {
   case GET_TEXT:
     return Object.assign({}, newState, {text: action.text})
   case CLICK:
-  /* THIS DID NOT WORK !!!!!****************/
   console.log(state.showComponent, "Component")
 let show = !state.showComponent
-  console.log('statehow',show, 'state',state.showComponent, "!!!$^#^#")
+  console.log('statehow',show, 'state',state.showComponent, "!!!$^#^#", newState)
 
     return Object.assign({}, newState, {showComponent: true})
+    case STOP:
+    return Object.assign({}, newState, {showComponent: false})
 
 
 
@@ -33,7 +32,7 @@ let show = !state.showComponent
 
 /* --------------------------- ACTIONS -------------------------- */
 const GET_TEXT = 'GET_TEXT'
-const CLICK = 'CLICK'   //NEW ACTION
+const CLICK = 'CLICK'
 const STOP = 'STOP'
 
 
@@ -51,7 +50,7 @@ export const buttonClick = text =>   {
   }
 }
 
-export const buttonUnClick = text =>   {   // THIS IS EXTRA I THINK BUT WILL KEEP FOR NOW
+export const buttonUnClick = text =>   {
   return {
   type: STOP
   }
