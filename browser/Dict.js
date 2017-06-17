@@ -4,6 +4,8 @@ import { fetchText, buttonClick } from './reducers'
 import { connect } from 'react-redux'
 
 
+
+// this came with the component
 const propTypes = {
   // Props injected by SpeechRecognition
   transcript: PropTypes.string,
@@ -20,7 +22,7 @@ class Dictaphone extends Component {
   clickHandler(sentence){
    console.log(sentence)
    const text = {
-            content: sentence.transcript
+            content: sentence.transcript   //transcribed text is an object - sentence.transcript is a string
         }
     this.props.fetchText(text)
   }
@@ -34,7 +36,7 @@ class Dictaphone extends Component {
     return (
       <div>
         <button onClick={resetTranscript}>Reset</button>
-        <span>{transcript}</span>
+        <span>{transcript}</span>  {/* this transcript is the transcrapied speech rendered on the page. Below is a Stop button. When clicked it classs the clickHandler which sends the text to fetchTExt and then to google and then we get the scores*/}
         <button onClick={() =>this.clickHandler({transcript})}>Stop</button>
       </div>
     )

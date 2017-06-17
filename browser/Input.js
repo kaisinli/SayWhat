@@ -10,7 +10,13 @@ import Dict from './Dict'
 
 
 
-
+/* So I wanted a toggle button, so that when the website is entered we can click "record" or
+start or sth like that and only after clicking it would start recording.
+that part works - but then if I click start again it stops but on the third click to re-start
+recording it messes up
+I tried doing it the redux-react way and tried the toggle part in our reducers instead of setState but it did not work
+check the reducers file .
+*/
 
 console.log(fetchText)
 class Input extends React.Component {
@@ -31,11 +37,13 @@ class Input extends React.Component {
         }
         this.props.fetchText(text)
     }
+
+
     clickHandler() {
 
         console.log("TSTS")
         //store.dispatch(this.props.buttonClick())
-        if (this.state.showComponent === false)
+        if (this.state.showComponent === false)              //I added showComponent toggle so that when we click the button it alternates between true/false after each click
         this.setState({showComponent: true});
     else
                 this.setState({showComponent: false});
@@ -61,7 +69,7 @@ class Input extends React.Component {
                     </div>
                 </form>
                 <Output mag={this.props.text.magnitude} score={this.props.text.score} />
-                <button  className="btn" onClick={() => this.clickHandler()}>Start</button>
+                <button  className="btn" onClick={() => this.clickHandler()}>Start</button>   {/* here when we click it renderes Dict component that statrs recoding */}
                 {this.state.showComponent === true ?
                     <Dict />
                 : null}
