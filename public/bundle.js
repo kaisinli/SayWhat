@@ -62,7 +62,7 @@
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _store = __webpack_require__(323);
+	var _store = __webpack_require__(324);
 	
 	var _store2 = _interopRequireDefault(_store);
 	
@@ -29329,15 +29329,15 @@
 	
 	var _Output2 = _interopRequireDefault(_Output);
 	
-	var _reactSpeechRecognition = __webpack_require__(302);
+	var _reactSpeechRecognition = __webpack_require__(303);
 	
 	var _reactSpeechRecognition2 = _interopRequireDefault(_reactSpeechRecognition);
 	
-	var _store = __webpack_require__(323);
+	var _store = __webpack_require__(324);
 	
 	var _store2 = _interopRequireDefault(_store);
 	
-	var _Dict = __webpack_require__(331);
+	var _Dict = __webpack_require__(332);
 	
 	var _Dict2 = _interopRequireDefault(_Dict);
 	
@@ -29394,19 +29394,19 @@
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'container' },
+	                _react2.default.createElement('img', { src: "http://i.imgur.com/7QMBqPn.png" }),
 	                _react2.default.createElement(
-	                    'h1',
-	                    { size: '200' },
-	                    ' SAY WHAT? '
+	                    'h3',
+	                    { 'class': 'display-4' },
+	                    'Text Input'
 	                ),
-	                _react2.default.createElement('style', null),
 	                _react2.default.createElement(
 	                    'form',
 	                    { onSubmit: this.submitHandler },
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'form-group' },
-	                        _react2.default.createElement('textarea', { name: 'text', rows: '10', className: 'form-control', placeholder: 'Say This' }),
+	                        _react2.default.createElement('textarea', { color: '#FFF', name: 'text', rows: '5', className: 'form-control', placeholder: 'Say This' }),
 	                        _react2.default.createElement(
 	                            'button',
 	                            { style: { "margin": "10px" }, id: 'sentimentBtn', className: 'btn btn-lg btn-primary', type: 'Submit' },
@@ -29415,8 +29415,8 @@
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    'h2',
-	                    null,
+	                    'h3',
+	                    { 'class': 'display-4' },
 	                    'Audio Input'
 	                ),
 	                _react2.default.createElement(
@@ -31115,7 +31115,7 @@
 	
 	var _reducers = __webpack_require__(300);
 	
-	var _lodash = __webpack_require__(332);
+	var _lodash = __webpack_require__(302);
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
@@ -31132,7 +31132,7 @@
 	            'div',
 	            null,
 	            _react2.default.createElement(
-	                'h2',
+	                'h3',
 	                null,
 	                'Results'
 	            ),
@@ -31178,47 +31178,53 @@
 	        ),
 	        function () {
 	            switch (true) {
+	                case props.score === 0:
+	                    return _react2.default.createElement(
+	                        'h4',
+	                        null,
+	                        'You\'re feeling: Neutral'
+	                    );
 	                case props.score.toPrecision(2) < 0 && props.score >= -0.2:
 	                    return _react2.default.createElement(
-	                        'h1',
+	                        'h4',
 	                        null,
-	                        'Slightly Negative'
+	                        'You\'re feeling: Slightly Negative'
 	                    );
 	                case props.score < -0.2 && props.score >= -0.4:
 	                    return _react2.default.createElement(
-	                        'h1',
+	                        'h4',
 	                        null,
-	                        'Negative'
+	                        'You\'re feeling: Negative'
 	                    );
 	                case props.score < -0.4:
 	                    return _react2.default.createElement(
-	                        'h1',
+	                        'h4',
 	                        null,
-	                        'Strongly Negative'
+	                        'You\'re feeling: Strongly Negative'
 	                    );
 	                case props.score > 0 && props.score <= 0.2:
 	                    return _react2.default.createElement(
-	                        'h1',
+	                        'h4',
 	                        null,
-	                        'Neutral'
+	                        'You\'re feeling: Neutral'
 	                    );
 	                case props.score > 0.2 && props.score <= 0.4:
 	                    return _react2.default.createElement(
-	                        'h1',
+	                        'h4',
 	                        null,
-	                        'Slightly Positive'
+	                        'You\'re feeling: Slightly Positive'
 	                    );
 	                case props.score > 0.3 && props.score <= 0.5:
 	                    return _react2.default.createElement(
-	                        'h1',
+	                        'h4',
 	                        null,
-	                        'Positive'
+	                        'You\'re feeling: Positive'
 	                    );
 	                case props.score > 0.5:
 	                    return _react2.default.createElement(
-	                        'h1',
+	                        'h4',
 	                        null,
-	                        'Strongly Positive'
+	                        'You\'re feeling: Strongly Positive'
 	                    );
 	                default:
 	                    null;
@@ -31231,2764 +31237,6 @@
 
 /***/ }),
 /* 302 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _SpeechRecognition = __webpack_require__(303);
-	
-	var _SpeechRecognition2 = _interopRequireDefault(_SpeechRecognition);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _SpeechRecognition2.default;
-
-/***/ }),
-/* 303 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	exports.default = SpeechRecognition;
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _coreDecorators = __webpack_require__(304);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-	  var desc = {};
-	  Object['ke' + 'ys'](descriptor).forEach(function (key) {
-	    desc[key] = descriptor[key];
-	  });
-	  desc.enumerable = !!desc.enumerable;
-	  desc.configurable = !!desc.configurable;
-	
-	  if ('value' in desc || desc.initializer) {
-	    desc.writable = true;
-	  }
-	
-	  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-	    return decorator(target, property, desc) || desc;
-	  }, desc);
-	
-	  if (context && desc.initializer !== void 0) {
-	    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-	    desc.initializer = undefined;
-	  }
-	
-	  if (desc.initializer === void 0) {
-	    Object['define' + 'Property'](target, property, desc);
-	    desc = null;
-	  }
-	
-	  return desc;
-	}
-	
-	function SpeechRecognition(WrappedComponent) {
-	  var _dec, _desc, _value, _class;
-	
-	  return _dec = (0, _coreDecorators.debounce)(1000), (_class = (function (_Component) {
-	    _inherits(SpeechRecognitionContainer, _Component);
-	
-	    function SpeechRecognitionContainer(props) {
-	      _classCallCheck(this, SpeechRecognitionContainer);
-	
-	      var _this = _possibleConstructorReturn(this, (SpeechRecognitionContainer.__proto__ || Object.getPrototypeOf(SpeechRecognitionContainer)).call(this, props));
-	
-	      _this.state = {
-	        interimTranscript: '',
-	        finalTranscript: '',
-	        recognition: null,
-	        browserSupportsSpeechRecognition: true
-	      };
-	      return _this;
-	    }
-	
-	    _createClass(SpeechRecognitionContainer, [{
-	      key: 'componentWillMount',
-	      value: function componentWillMount() {
-	        var root = typeof window !== 'undefined' ? window : this;
-	        var BrowserSpeechRecognition = root.SpeechRecognition || root.webkitSpeechRecognition || root.mozSpeechRecognition || root.msSpeechRecognition || root.oSpeechRecognition;
-	        if (BrowserSpeechRecognition) {
-	          var recognition = new BrowserSpeechRecognition();
-	          recognition.continuous = true;
-	          recognition.interimResults = true;
-	
-	          recognition.onresult = this.updateTranscript.bind(this);
-	          recognition.onend = this.restartRecognition.bind(this);
-	          recognition.start();
-	          this.setState({ recognition: recognition });
-	        } else {
-	          this.setState({ browserSupportsSpeechRecognition: false });
-	        }
-	      }
-	    }, {
-	      key: 'componentWillUnmount',
-	      value: function componentWillUnmount() {
-	        if (this.state.recognition) {
-	          this.state.recognition.abort();
-	        }
-	      }
-	    }, {
-	      key: 'restartRecognition',
-	      value: function restartRecognition() {
-	        if (this.state.recognition) {
-	          this.state.recognition.start();
-	        }
-	      }
-	    }, {
-	      key: 'updateTranscript',
-	      value: function updateTranscript(event) {
-	        var _getNewTranscript = this.getNewTranscript(event),
-	            finalTranscript = _getNewTranscript.finalTranscript,
-	            interimTranscript = _getNewTranscript.interimTranscript;
-	
-	        this.setState({ finalTranscript: finalTranscript, interimTranscript: interimTranscript });
-	      }
-	    }, {
-	      key: 'getNewTranscript',
-	      value: function getNewTranscript(event) {
-	        var finalTranscript = this.state.finalTranscript;
-	        var interimTranscript = '';
-	        for (var i = event.resultIndex; i < event.results.length; ++i) {
-	          if (event.results[i].isFinal) {
-	            finalTranscript = this.concatTranscripts(finalTranscript, event.results[i][0].transcript);
-	          } else {
-	            interimTranscript = this.concatTranscripts(interimTranscript, event.results[i][0].transcript);
-	          }
-	        }
-	        return { finalTranscript: finalTranscript, interimTranscript: interimTranscript };
-	      }
-	    }, {
-	      key: 'concatTranscripts',
-	      value: function concatTranscripts() {
-	        for (var _len = arguments.length, transcriptParts = Array(_len), _key = 0; _key < _len; _key++) {
-	          transcriptParts[_key] = arguments[_key];
-	        }
-	
-	        return transcriptParts.map(function (t) {
-	          return t.trim();
-	        }).join(' ').trim();
-	      }
-	    }, {
-	      key: 'resetTranscript',
-	      value: function resetTranscript() {
-	        this.setState({ interimTranscript: '', finalTranscript: '' });
-	        if (this.state.recognition) {
-	          this.state.recognition.abort();
-	        }
-	      }
-	    }, {
-	      key: 'render',
-	      value: function render() {
-	        var _state = this.state,
-	            finalTranscript = _state.finalTranscript,
-	            interimTranscript = _state.interimTranscript;
-	
-	        var transcript = this.concatTranscripts(finalTranscript, interimTranscript);
-	
-	        return _react2.default.createElement(WrappedComponent, _extends({
-	          resetTranscript: this.resetTranscript,
-	          transcript: transcript
-	        }, this.state, this.props));
-	      }
-	    }]);
-	
-	    return SpeechRecognitionContainer;
-	  })(_react.Component), (_applyDecoratedDescriptor(_class.prototype, 'restartRecognition', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'restartRecognition'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'resetTranscript', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'resetTranscript'), _class.prototype)), _class);
-	}
-
-/***/ }),
-/* 304 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/**
-	 * core-decorators.js
-	 * (c) 2016 Jay Phelps and contributors
-	 * MIT Licensed
-	 * https://github.com/jayphelps/core-decorators.js
-	 * @license
-	 */
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	function _interopRequire(obj) { return obj && obj.__esModule ? obj['default'] : obj; }
-	
-	var _override = __webpack_require__(305);
-	
-	exports.override = _interopRequire(_override);
-	
-	var _deprecate = __webpack_require__(308);
-	
-	exports.deprecate = _interopRequire(_deprecate);
-	exports.deprecated = _interopRequire(_deprecate);
-	
-	var _suppressWarnings = __webpack_require__(309);
-	
-	exports.suppressWarnings = _interopRequire(_suppressWarnings);
-	
-	var _memoize = __webpack_require__(310);
-	
-	exports.memoize = _interopRequire(_memoize);
-	
-	var _autobind = __webpack_require__(311);
-	
-	exports.autobind = _interopRequire(_autobind);
-	
-	var _readonly = __webpack_require__(312);
-	
-	exports.readonly = _interopRequire(_readonly);
-	
-	var _enumerable = __webpack_require__(313);
-	
-	exports.enumerable = _interopRequire(_enumerable);
-	
-	var _nonenumerable = __webpack_require__(314);
-	
-	exports.nonenumerable = _interopRequire(_nonenumerable);
-	
-	var _nonconfigurable = __webpack_require__(315);
-	
-	exports.nonconfigurable = _interopRequire(_nonconfigurable);
-	
-	var _debounce = __webpack_require__(316);
-	
-	exports.debounce = _interopRequire(_debounce);
-	
-	var _throttle = __webpack_require__(317);
-	
-	exports.throttle = _interopRequire(_throttle);
-	
-	var _decorate = __webpack_require__(318);
-	
-	exports.decorate = _interopRequire(_decorate);
-	
-	var _mixin = __webpack_require__(319);
-	
-	exports.mixin = _interopRequire(_mixin);
-	exports.mixins = _interopRequire(_mixin);
-	
-	var _lazyInitialize = __webpack_require__(307);
-	
-	exports.lazyInitialize = _interopRequire(_lazyInitialize);
-	
-	var _time = __webpack_require__(320);
-	
-	exports.time = _interopRequire(_time);
-	
-	var _extendDescriptor = __webpack_require__(321);
-	
-	exports.extendDescriptor = _interopRequire(_extendDescriptor);
-	
-	// Helper to apply decorators to a class without transpiler support
-	
-	var _applyDecorators = __webpack_require__(322);
-	
-	exports.applyDecorators = _interopRequire(_applyDecorators);
-
-/***/ }),
-/* 305 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	exports['default'] = override;
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	var GENERIC_FUNCTION_ERROR = '{child} does not properly override {parent}';
-	var FUNCTION_REGEXP = /^function ([_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*)?(\([^\)]*\))[\s\S]+$/;
-	
-	var SyntaxErrorReporter = (function () {
-	  _createClass(SyntaxErrorReporter, [{
-	    key: '_getTopic',
-	    value: function _getTopic(descriptor) {
-	      if (descriptor === undefined) {
-	        return null;
-	      }
-	
-	      if ('value' in descriptor) {
-	        return descriptor.value;
-	      }
-	
-	      if ('get' in descriptor) {
-	        return descriptor.get;
-	      }
-	
-	      if ('set' in descriptor) {
-	        return descriptor.set;
-	      }
-	    }
-	  }, {
-	    key: '_extractTopicSignature',
-	    value: function _extractTopicSignature(topic) {
-	      switch (typeof topic) {
-	        case 'function':
-	          return this._extractFunctionSignature(topic);
-	        default:
-	          return this.key;
-	      }
-	    }
-	  }, {
-	    key: '_extractFunctionSignature',
-	    value: function _extractFunctionSignature(fn) {
-	      var _this = this;
-	
-	      return fn.toString().replace(FUNCTION_REGEXP, function (match, name, params) {
-	        if (name === undefined) name = _this.key;
-	        return name + params;
-	      });
-	    }
-	  }, {
-	    key: 'key',
-	    get: function get() {
-	      return this.childDescriptor.key;
-	    }
-	  }, {
-	    key: 'parentNotation',
-	    get: function get() {
-	      return this.parentKlass.constructor.name + '#' + this.parentPropertySignature;
-	    }
-	  }, {
-	    key: 'childNotation',
-	    get: function get() {
-	      return this.childKlass.constructor.name + '#' + this.childPropertySignature;
-	    }
-	  }, {
-	    key: 'parentTopic',
-	    get: function get() {
-	      return this._getTopic(this.parentDescriptor);
-	    }
-	  }, {
-	    key: 'childTopic',
-	    get: function get() {
-	      return this._getTopic(this.childDescriptor);
-	    }
-	  }, {
-	    key: 'parentPropertySignature',
-	    get: function get() {
-	      return this._extractTopicSignature(this.parentTopic);
-	    }
-	  }, {
-	    key: 'childPropertySignature',
-	    get: function get() {
-	      return this._extractTopicSignature(this.childTopic);
-	    }
-	  }]);
-	
-	  function SyntaxErrorReporter(parentKlass, childKlass, parentDescriptor, childDescriptor) {
-	    _classCallCheck(this, SyntaxErrorReporter);
-	
-	    this.parentKlass = parentKlass;
-	    this.childKlass = childKlass;
-	    this.parentDescriptor = parentDescriptor;
-	    this.childDescriptor = childDescriptor;
-	  }
-	
-	  _createClass(SyntaxErrorReporter, [{
-	    key: 'assert',
-	    value: function assert(condition) {
-	      var msg = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
-	
-	      if (condition !== true) {
-	        this.error(GENERIC_FUNCTION_ERROR + msg);
-	      }
-	    }
-	  }, {
-	    key: 'error',
-	    value: function error(msg) {
-	      var _this2 = this;
-	
-	      msg = msg
-	      // Replace lazily, because they actually might not
-	      // be available in all cases
-	      .replace('{parent}', function (m) {
-	        return _this2.parentNotation;
-	      }).replace('{child}', function (m) {
-	        return _this2.childNotation;
-	      });
-	      throw new SyntaxError(msg);
-	    }
-	  }]);
-	
-	  return SyntaxErrorReporter;
-	})();
-	
-	function getDescriptorType(descriptor) {
-	  if (descriptor.hasOwnProperty('value')) {
-	    return 'data';
-	  }
-	
-	  if (descriptor.hasOwnProperty('get') || descriptor.hasOwnProperty('set')) {
-	    return 'accessor';
-	  }
-	
-	  // If none of them exist, browsers treat it as
-	  // a data descriptor with a value of `undefined`
-	  return 'data';
-	}
-	
-	function checkFunctionSignatures(parent, child, reporter) {
-	  reporter.assert(parent.length === child.length);
-	}
-	
-	function checkDataDescriptors(parent, child, reporter) {
-	  var parentValueType = typeof parent.value;
-	  var childValueType = typeof child.value;
-	
-	  if (parentValueType === 'undefined' && childValueType === 'undefined') {
-	    // class properties can be any expression, which isn't ran until the
-	    // the instance is created, so we can't reliably get type information
-	    // for them yet (per spec). Perhaps when Babel includes flow-type info
-	    // in runtime? Tried regex solutions, but super hacky and only feasible
-	    // on primitives, which is confusing for usage...
-	    reporter.error('descriptor values are both undefined. (class properties are are not currently supported)\'');
-	  }
-	
-	  if (parentValueType !== childValueType) {
-	    var isFunctionOverUndefined = childValueType === 'function' && parentValueType === undefined;
-	    // Even though we don't support class properties, this
-	    // will still handle more than just functions, just in case.
-	    // Shadowing an undefined value is an error if the inherited
-	    // value was undefined (usually a class property, not a method)
-	    if (isFunctionOverUndefined || parentValueType !== undefined) {
-	      reporter.error('value types do not match. {parent} is "' + parentValueType + '", {child} is "' + childValueType + '"');
-	    }
-	  }
-	
-	  // Switch, in preparation for supporting more types
-	  switch (childValueType) {
-	    case 'function':
-	      checkFunctionSignatures(parent.value, child.value, reporter);
-	      break;
-	
-	    default:
-	      reporter.error('Unexpected error. Please file a bug with: {parent} is "' + parentValueType + '", {child} is "' + childValueType + '"');
-	      break;
-	  }
-	}
-	
-	function checkAccessorDescriptors(parent, child, reporter) {
-	  var parentHasGetter = typeof parent.get === 'function';
-	  var childHasGetter = typeof child.get === 'function';
-	  var parentHasSetter = typeof parent.set === 'function';
-	  var childHasSetter = typeof child.set === 'function';
-	
-	  if (parentHasGetter || childHasGetter) {
-	    if (!parentHasGetter && parentHasSetter) {
-	      reporter.error('{parent} is setter but {child} is getter');
-	    }
-	
-	    if (!childHasGetter && childHasSetter) {
-	      reporter.error('{parent} is getter but {child} is setter');
-	    }
-	
-	    checkFunctionSignatures(parent.get, child.get, reporter);
-	  }
-	
-	  if (parentHasSetter || childHasSetter) {
-	    if (!parentHasSetter && parentHasGetter) {
-	      reporter.error('{parent} is getter but {child} is setter');
-	    }
-	
-	    if (!childHasSetter && childHasGetter) {
-	      reporter.error('{parent} is setter but {child} is getter');
-	    }
-	
-	    checkFunctionSignatures(parent.set, child.set, reporter);
-	  }
-	}
-	
-	function checkDescriptors(parent, child, reporter) {
-	  var parentType = getDescriptorType(parent);
-	  var childType = getDescriptorType(child);
-	
-	  if (parentType !== childType) {
-	    reporter.error('descriptor types do not match. {parent} is "' + parentType + '", {child} is "' + childType + '"');
-	  }
-	
-	  switch (childType) {
-	    case 'data':
-	      checkDataDescriptors(parent, child, reporter);
-	      break;
-	
-	    case 'accessor':
-	      checkAccessorDescriptors(parent, child, reporter);
-	      break;
-	  }
-	}
-	
-	var suggestionTransforms = [function (key) {
-	  return key.toLowerCase();
-	}, function (key) {
-	  return key.toUpperCase();
-	}, function (key) {
-	  return key + 's';
-	}, function (key) {
-	  return key.slice(0, -1);
-	}, function (key) {
-	  return key.slice(1, key.length);
-	}];
-	
-	function findPossibleAlternatives(superKlass, key) {
-	  for (var i = 0, l = suggestionTransforms.length; i < l; i++) {
-	    var fn = suggestionTransforms[i];
-	    var suggestion = fn(key);
-	
-	    if (suggestion in superKlass) {
-	      return suggestion;
-	    }
-	  }
-	
-	  return null;
-	}
-	
-	function handleDescriptor(target, key, descriptor) {
-	  descriptor.key = key;
-	  var superKlass = Object.getPrototypeOf(target);
-	  var superDescriptor = Object.getOwnPropertyDescriptor(superKlass, key);
-	  var reporter = new SyntaxErrorReporter(superKlass, target, superDescriptor, descriptor);
-	
-	  if (superDescriptor === undefined) {
-	    var suggestedKey = findPossibleAlternatives(superKlass, key);
-	    var suggestion = suggestedKey ? '\n\n  Did you mean "' + suggestedKey + '"?' : '';
-	    reporter.error('No descriptor matching {child} was found on the prototype chain.' + suggestion);
-	  }
-	
-	  checkDescriptors(superDescriptor, descriptor, reporter);
-	
-	  return descriptor;
-	}
-	
-	function override() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 306 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	var _slice = Array.prototype.slice;
-	
-	var _createDecoratedClass = (function () { function defineProperties(target, descriptors, initializers) { for (var i = 0; i < descriptors.length; i++) { var descriptor = descriptors[i]; var decorators = descriptor.decorators; var key = descriptor.key; delete descriptor.key; delete descriptor.decorators; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor || descriptor.initializer) descriptor.writable = true; if (decorators) { for (var f = 0; f < decorators.length; f++) { var decorator = decorators[f]; if (typeof decorator === 'function') { descriptor = decorator(target, key, descriptor) || descriptor; } else { throw new TypeError('The decorator for method ' + descriptor.key + ' is of the invalid type ' + typeof decorator); } } if (descriptor.initializer !== undefined) { initializers[key] = descriptor; continue; } } Object.defineProperty(target, key, descriptor); } } return function (Constructor, protoProps, staticProps, protoInitializers, staticInitializers) { if (protoProps) defineProperties(Constructor.prototype, protoProps, protoInitializers); if (staticProps) defineProperties(Constructor, staticProps, staticInitializers); return Constructor; }; })();
-	
-	exports.isDescriptor = isDescriptor;
-	exports.decorate = decorate;
-	exports.metaFor = metaFor;
-	exports.getOwnPropertyDescriptors = getOwnPropertyDescriptors;
-	exports.createDefaultSetter = createDefaultSetter;
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer ? descriptor.initializer.call(target) : undefined; Object.defineProperty(target, key, descriptor); }
-	
-	var _lazyInitialize = __webpack_require__(307);
-	
-	var _lazyInitialize2 = _interopRequireDefault(_lazyInitialize);
-	
-	var defineProperty = Object.defineProperty;
-	var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-	var getOwnPropertyNames = Object.getOwnPropertyNames;
-	var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-	
-	function isDescriptor(desc) {
-	  if (!desc || !desc.hasOwnProperty) {
-	    return false;
-	  }
-	
-	  var keys = ['value', 'initializer', 'get', 'set'];
-	
-	  for (var i = 0, l = keys.length; i < l; i++) {
-	    if (desc.hasOwnProperty(keys[i])) {
-	      return true;
-	    }
-	  }
-	
-	  return false;
-	}
-	
-	function decorate(handleDescriptor, entryArgs) {
-	  if (isDescriptor(entryArgs[entryArgs.length - 1])) {
-	    return handleDescriptor.apply(undefined, _toConsumableArray(entryArgs).concat([[]]));
-	  } else {
-	    return function () {
-	      return handleDescriptor.apply(undefined, _slice.call(arguments).concat([entryArgs]));
-	    };
-	  }
-	}
-	
-	var Meta = (function () {
-	  var _instanceInitializers = {};
-	
-	  function Meta() {
-	    _classCallCheck(this, Meta);
-	
-	    _defineDecoratedPropertyDescriptor(this, 'debounceTimeoutIds', _instanceInitializers);
-	
-	    _defineDecoratedPropertyDescriptor(this, 'throttleTimeoutIds', _instanceInitializers);
-	
-	    _defineDecoratedPropertyDescriptor(this, 'throttlePreviousTimestamps', _instanceInitializers);
-	  }
-	
-	  _createDecoratedClass(Meta, [{
-	    key: 'debounceTimeoutIds',
-	    decorators: [_lazyInitialize2['default']],
-	    initializer: function initializer() {
-	      return {};
-	    },
-	    enumerable: true
-	  }, {
-	    key: 'throttleTimeoutIds',
-	    decorators: [_lazyInitialize2['default']],
-	    initializer: function initializer() {
-	      return {};
-	    },
-	    enumerable: true
-	  }, {
-	    key: 'throttlePreviousTimestamps',
-	    decorators: [_lazyInitialize2['default']],
-	    initializer: function initializer() {
-	      return {};
-	    },
-	    enumerable: true
-	  }], null, _instanceInitializers);
-	
-	  return Meta;
-	})();
-	
-	var META_KEY = typeof Symbol === 'function' ? Symbol('__core_decorators__') : '__core_decorators__';
-	
-	function metaFor(obj) {
-	  if (obj.hasOwnProperty(META_KEY) === false) {
-	    defineProperty(obj, META_KEY, {
-	      // Defaults: NOT enumerable, configurable, or writable
-	      value: new Meta()
-	    });
-	  }
-	
-	  return obj[META_KEY];
-	}
-	
-	var getOwnKeys = getOwnPropertySymbols ? function (object) {
-	  return getOwnPropertyNames(object).concat(getOwnPropertySymbols(object));
-	} : getOwnPropertyNames;
-	
-	exports.getOwnKeys = getOwnKeys;
-	
-	function getOwnPropertyDescriptors(obj) {
-	  var descs = {};
-	
-	  getOwnKeys(obj).forEach(function (key) {
-	    return descs[key] = getOwnPropertyDescriptor(obj, key);
-	  });
-	
-	  return descs;
-	}
-	
-	function createDefaultSetter(key) {
-	  return function set(newValue) {
-	    Object.defineProperty(this, key, {
-	      configurable: true,
-	      writable: true,
-	      // IS enumerable when reassigned by the outside word
-	      enumerable: true,
-	      value: newValue
-	    });
-	
-	    return newValue;
-	  };
-	}
-
-/***/ }),
-/* 307 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	exports['default'] = lazyInitialize;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	var defineProperty = Object.defineProperty;
-	
-	function handleDescriptor(target, key, descriptor) {
-	  var configurable = descriptor.configurable;
-	  var enumerable = descriptor.enumerable;
-	  var initializer = descriptor.initializer;
-	  var value = descriptor.value;
-	
-	  return {
-	    configurable: configurable,
-	    enumerable: enumerable,
-	
-	    get: function get() {
-	      // This happens if someone accesses the
-	      // property directly on the prototype
-	      if (this === target) {
-	        return;
-	      }
-	
-	      var ret = initializer ? initializer.call(this) : value;
-	
-	      defineProperty(this, key, {
-	        configurable: configurable,
-	        enumerable: enumerable,
-	        writable: true,
-	        value: ret
-	      });
-	
-	      return ret;
-	    },
-	
-	    set: (0, _privateUtils.createDefaultSetter)(key)
-	  };
-	}
-	
-	function lazyInitialize() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 308 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }; })();
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	exports['default'] = deprecate;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	var DEFAULT_MSG = 'This function will be removed in future versions.';
-	
-	function handleDescriptor(target, key, descriptor, _ref) {
-	  var _ref2 = _slicedToArray(_ref, 2);
-	
-	  var _ref2$0 = _ref2[0];
-	  var msg = _ref2$0 === undefined ? DEFAULT_MSG : _ref2$0;
-	  var _ref2$1 = _ref2[1];
-	  var options = _ref2$1 === undefined ? {} : _ref2$1;
-	
-	  if (typeof descriptor.value !== 'function') {
-	    throw new SyntaxError('Only functions can be marked as deprecated');
-	  }
-	
-	  var methodSignature = target.constructor.name + '#' + key;
-	
-	  if (options.url) {
-	    msg += '\n\n    See ' + options.url + ' for more details.\n\n';
-	  }
-	
-	  return _extends({}, descriptor, {
-	    value: function deprecationWrapper() {
-	      console.warn('DEPRECATION ' + methodSignature + ': ' + msg);
-	      return descriptor.value.apply(this, arguments);
-	    }
-	  });
-	}
-	
-	function deprecate() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 309 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	exports['default'] = suppressWarnings;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	function suppressedWarningNoop() {
-	  // Warnings are currently suppressed via @suppressWarnings
-	}
-	
-	function applyWithoutWarnings(context, fn, args) {
-	  if (typeof console === 'object') {
-	    var nativeWarn = console.warn;
-	    console.warn = suppressedWarningNoop;
-	    var ret = fn.apply(context, args);
-	    console.warn = nativeWarn;
-	    return ret;
-	  } else {
-	    return fn.apply(context, args);
-	  }
-	}
-	
-	function handleDescriptor(target, key, descriptor) {
-	  return _extends({}, descriptor, {
-	    value: function suppressWarningsWrapper() {
-	      return applyWithoutWarnings(this, descriptor.value, arguments);
-	    }
-	  });
-	}
-	
-	function suppressWarnings() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 310 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	exports['default'] = memoize;
-	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	function toObject(cache, value) {
-	  if (value === Object(value)) {
-	    return value;
-	  }
-	  return cache[value] || (cache[value] = {});
-	}
-	
-	function applyAndCache(context, fn, args, cache, signature) {
-	  var ret = fn.apply(context, args);
-	  cache[signature] = ret;
-	  return ret;
-	}
-	
-	function metaForDescriptor(descriptor) {
-	  var fn = undefined,
-	      wrapKey = undefined;
-	
-	  // This is ugly code, but way faster than other
-	  // ways I tried that *looked* pretty
-	
-	  if (descriptor.value) {
-	    fn = descriptor.value;
-	    wrapKey = 'value';
-	  } else if (descriptor.get) {
-	    fn = descriptor.get;
-	    wrapKey = 'get';
-	  } else if (descriptor.set) {
-	    fn = descriptor.set;
-	    wrapKey = 'set';
-	  }
-	
-	  return { fn: fn, wrapKey: wrapKey };
-	}
-	
-	function handleDescriptor(target, key, descriptor) {
-	  console.warn('DEPRECATION: @memoize is deprecated and will be removed shortly. Use @decorate with lodash\'s memoize helper.\n\n  https://github.com/jayphelps/core-decorators.js#decorate');
-	
-	  var _metaForDescriptor = metaForDescriptor(descriptor);
-	
-	  var fn = _metaForDescriptor.fn;
-	  var wrapKey = _metaForDescriptor.wrapKey;
-	
-	  var argumentCache = new WeakMap();
-	  var signatureCache = Object.create(null);
-	  var primativeRefCache = Object.create(null);
-	  var argumentIdCounter = 0;
-	
-	  return _extends({}, descriptor, _defineProperty({}, wrapKey, function memoizeWrapper() {
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-	
-	    var signature = '0';
-	
-	    for (var i = 0, l = args.length; i < l; i++) {
-	      var arg = args[i];
-	      var argRef = toObject(primativeRefCache, arg);
-	      var argKey = argumentCache.get(argRef);
-	
-	      if (argKey === undefined) {
-	        argKey = ++argumentIdCounter;
-	        argumentCache.set(argRef, argKey);
-	      }
-	
-	      signature += argKey;
-	    }
-	
-	    return signatureCache[signature] || applyAndCache(this, fn, arguments, signatureCache, signature);
-	  }));
-	}
-	
-	function memoize() {
-	  for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-	    args[_key2] = arguments[_key2];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 311 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	exports['default'] = autobind;
-	
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	var defineProperty = Object.defineProperty;
-	var getPrototypeOf = Object.getPrototypeOf;
-	
-	function bind(fn, context) {
-	  if (fn.bind) {
-	    return fn.bind(context);
-	  } else {
-	    return function __autobind__() {
-	      return fn.apply(context, arguments);
-	    };
-	  }
-	}
-	
-	var mapStore = undefined;
-	
-	function getBoundSuper(obj, fn) {
-	  if (typeof WeakMap === 'undefined') {
-	    throw new Error('Using @autobind on ' + fn.name + '() requires WeakMap support due to its use of super.' + fn.name + '()\n      See https://github.com/jayphelps/core-decorators.js/issues/20');
-	  }
-	
-	  if (!mapStore) {
-	    mapStore = new WeakMap();
-	  }
-	
-	  if (mapStore.has(obj) === false) {
-	    mapStore.set(obj, new WeakMap());
-	  }
-	
-	  var superStore = mapStore.get(obj);
-	
-	  if (superStore.has(fn) === false) {
-	    superStore.set(fn, bind(fn, obj));
-	  }
-	
-	  return superStore.get(fn);
-	}
-	
-	function autobindClass(klass) {
-	  var descs = (0, _privateUtils.getOwnPropertyDescriptors)(klass.prototype);
-	  var keys = (0, _privateUtils.getOwnKeys)(descs);
-	
-	  for (var i = 0, l = keys.length; i < l; i++) {
-	    var key = keys[i];
-	    var desc = descs[key];
-	
-	    if (typeof desc.value !== 'function' || key === 'constructor') {
-	      continue;
-	    }
-	
-	    defineProperty(klass.prototype, key, autobindMethod(klass.prototype, key, desc));
-	  }
-	}
-	
-	function autobindMethod(target, key, _ref) {
-	  var fn = _ref.value;
-	  var configurable = _ref.configurable;
-	  var enumerable = _ref.enumerable;
-	
-	  if (typeof fn !== 'function') {
-	    throw new SyntaxError('@autobind can only be used on functions, not: ' + fn);
-	  }
-	
-	  var constructor = target.constructor;
-	
-	  return {
-	    configurable: configurable,
-	    enumerable: enumerable,
-	
-	    get: function get() {
-	      // Class.prototype.key lookup
-	      // Someone accesses the property directly on the prototype on which it is
-	      // actually defined on, i.e. Class.prototype.hasOwnProperty(key)
-	      if (this === target) {
-	        return fn;
-	      }
-	
-	      // Class.prototype.key lookup
-	      // Someone accesses the property directly on a prototype but it was found
-	      // up the chain, not defined directly on it
-	      // i.e. Class.prototype.hasOwnProperty(key) == false && key in Class.prototype
-	      if (this.constructor !== constructor && getPrototypeOf(this).constructor === constructor) {
-	        return fn;
-	      }
-	
-	      // Autobound method calling super.sameMethod() which is also autobound and so on.
-	      if (this.constructor !== constructor && key in this.constructor.prototype) {
-	        return getBoundSuper(this, fn);
-	      }
-	
-	      var boundFn = bind(fn, this);
-	
-	      defineProperty(this, key, {
-	        configurable: true,
-	        writable: true,
-	        // NOT enumerable when it's a bound method
-	        enumerable: false,
-	        value: boundFn
-	      });
-	
-	      return boundFn;
-	    },
-	    set: (0, _privateUtils.createDefaultSetter)(key)
-	  };
-	}
-	
-	function handle(args) {
-	  if (args.length === 1) {
-	    return autobindClass.apply(undefined, _toConsumableArray(args));
-	  } else {
-	    return autobindMethod.apply(undefined, _toConsumableArray(args));
-	  }
-	}
-	
-	function autobind() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  if (args.length === 0) {
-	    return function () {
-	      return handle(arguments);
-	    };
-	  } else {
-	    return handle(args);
-	  }
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 312 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	exports['default'] = readonly;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	function handleDescriptor(target, key, descriptor) {
-	  descriptor.writable = false;
-	  return descriptor;
-	}
-	
-	function readonly() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 313 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	exports['default'] = enumerable;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	function handleDescriptor(target, key, descriptor) {
-	  descriptor.enumerable = true;
-	  return descriptor;
-	}
-	
-	function enumerable() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 314 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	exports['default'] = nonenumerable;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	function handleDescriptor(target, key, descriptor) {
-	  descriptor.enumerable = false;
-	  return descriptor;
-	}
-	
-	function nonenumerable() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 315 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	exports['default'] = nonconfigurable;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	function handleDescriptor(target, key, descriptor) {
-	  descriptor.configurable = false;
-	  return descriptor;
-	}
-	
-	function nonconfigurable() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 316 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }; })();
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	exports['default'] = debounce;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	var DEFAULT_TIMEOUT = 300;
-	
-	function handleDescriptor(target, key, descriptor, _ref) {
-	  var _ref2 = _slicedToArray(_ref, 2);
-	
-	  var _ref2$0 = _ref2[0];
-	  var wait = _ref2$0 === undefined ? DEFAULT_TIMEOUT : _ref2$0;
-	  var _ref2$1 = _ref2[1];
-	  var immediate = _ref2$1 === undefined ? false : _ref2$1;
-	
-	  var callback = descriptor.value;
-	
-	  if (typeof callback !== 'function') {
-	    throw new SyntaxError('Only functions can be debounced');
-	  }
-	
-	  return _extends({}, descriptor, {
-	    value: function value() {
-	      var _this = this;
-	
-	      var _metaFor = (0, _privateUtils.metaFor)(this);
-	
-	      var debounceTimeoutIds = _metaFor.debounceTimeoutIds;
-	
-	      var timeout = debounceTimeoutIds[key];
-	      var callNow = immediate && !timeout;
-	      var args = arguments;
-	
-	      clearTimeout(timeout);
-	
-	      debounceTimeoutIds[key] = setTimeout(function () {
-	        delete debounceTimeoutIds[key];
-	        if (!immediate) {
-	          callback.apply(_this, args);
-	        }
-	      }, wait);
-	
-	      if (callNow) {
-	        callback.apply(this, args);
-	      }
-	    }
-	  });
-	}
-	
-	function debounce() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 317 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }; })();
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	exports['default'] = throttle;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	var DEFAULT_TIMEOUT = 300;
-	
-	function handleDescriptor(target, key, descriptor, _ref) {
-	  var _ref2 = _slicedToArray(_ref, 2);
-	
-	  var _ref2$0 = _ref2[0];
-	  var wait = _ref2$0 === undefined ? DEFAULT_TIMEOUT : _ref2$0;
-	  var _ref2$1 = _ref2[1];
-	  var options = _ref2$1 === undefined ? {} : _ref2$1;
-	
-	  var callback = descriptor.value;
-	
-	  if (typeof callback !== 'function') {
-	    throw new SyntaxError('Only functions can be throttled');
-	  }
-	
-	  if (options.leading !== false) {
-	    options.leading = true;
-	  }
-	
-	  if (options.trailing !== false) {
-	    options.trailing = true;
-	  }
-	
-	  return _extends({}, descriptor, {
-	    value: function value() {
-	      var _this = this;
-	
-	      var _metaFor = (0, _privateUtils.metaFor)(this);
-	
-	      var throttleTimeoutIds = _metaFor.throttleTimeoutIds;
-	      var throttlePreviousTimestamps = _metaFor.throttlePreviousTimestamps;
-	
-	      var timeout = throttleTimeoutIds[key];
-	      // last execute timestamp
-	      var previous = throttlePreviousTimestamps[key] || 0;
-	      var now = Date.now();
-	      var args = arguments;
-	
-	      // if first be called and disable the execution on the leading edge
-	      // set last execute timestamp to now
-	      if (!previous && options.leading === false) {
-	        previous = now;
-	      }
-	
-	      var remaining = wait - (now - previous);
-	
-	      if (remaining <= 0) {
-	        clearTimeout(timeout);
-	        delete throttleTimeoutIds[key];
-	        throttlePreviousTimestamps[key] = now;
-	        callback.apply(this, args);
-	      } else if (!timeout && options.trailing !== false) {
-	        throttleTimeoutIds[key] = setTimeout(function () {
-	          throttlePreviousTimestamps[key] = options.leading === false ? 0 : Date.now();
-	          delete throttleTimeoutIds[key];
-	          callback.apply(_this, args);
-	        }, remaining);
-	      }
-	    }
-	  });
-	}
-	
-	function throttle() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 318 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	exports['default'] = decorate;
-	
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
-	
-	function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	var defineProperty = Object.defineProperty;
-	
-	function handleDescriptor(target, key, descriptor, _ref) {
-	  var _ref2 = _toArray(_ref);
-	
-	  var decorator = _ref2[0];
-	
-	  var args = _ref2.slice(1);
-	
-	  var configurable = descriptor.configurable;
-	  var enumerable = descriptor.enumerable;
-	  var writable = descriptor.writable;
-	
-	  var originalGet = descriptor.get;
-	  var originalSet = descriptor.set;
-	  var originalValue = descriptor.value;
-	  var isGetter = !!originalGet;
-	
-	  return {
-	    configurable: configurable,
-	    enumerable: enumerable,
-	    get: function get() {
-	      var fn = isGetter ? originalGet.call(this) : originalValue;
-	      var value = decorator.call.apply(decorator, [this, fn].concat(_toConsumableArray(args)));
-	
-	      if (isGetter) {
-	        return value;
-	      } else {
-	        var desc = {
-	          configurable: configurable,
-	          enumerable: enumerable
-	        };
-	
-	        desc.value = value;
-	        desc.writable = writable;
-	
-	        defineProperty(this, key, desc);
-	
-	        return value;
-	      }
-	    },
-	    set: isGetter ? originalSet : (0, _privateUtils.createDefaultSetter)()
-	  };
-	}
-	
-	function decorate() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 319 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	exports['default'] = mixin;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	var defineProperty = Object.defineProperty;
-	var getPrototypeOf = Object.getPrototypeOf;
-	
-	function buggySymbol(symbol) {
-	  return Object.prototype.toString.call(symbol) === '[object Symbol]' && typeof symbol === 'object';
-	}
-	
-	function hasProperty(prop, obj) {
-	  // We have to traverse manually prototypes' chain for polyfilled ES6 Symbols
-	  // like "in" operator does.
-	  // I.e.: Babel 5 Symbol polyfill stores every created symbol in Object.prototype.
-	  // That's why we cannot use construction like "prop in obj" to check, if needed
-	  // prop actually exists in given object/prototypes' chain.
-	  if (buggySymbol(prop)) {
-	    do {
-	      if (obj === Object.prototype) {
-	        // Polyfill assigns undefined as value for stored symbol key.
-	        // We can assume in this special case if there is nothing assigned it doesn't exist.
-	        return typeof obj[prop] !== 'undefined';
-	      }
-	      if (obj.hasOwnProperty(prop)) {
-	        return true;
-	      }
-	    } while (obj = getPrototypeOf(obj));
-	    return false;
-	  } else {
-	    return prop in obj;
-	  }
-	}
-	
-	function handleClass(target, mixins) {
-	  if (!mixins.length) {
-	    throw new SyntaxError('@mixin() class ' + target.name + ' requires at least one mixin as an argument');
-	  }
-	
-	  for (var i = 0, l = mixins.length; i < l; i++) {
-	    var descs = (0, _privateUtils.getOwnPropertyDescriptors)(mixins[i]);
-	    var keys = (0, _privateUtils.getOwnKeys)(descs);
-	
-	    for (var j = 0, k = keys.length; j < k; j++) {
-	      var key = keys[j];
-	
-	      if (!hasProperty(key, target.prototype)) {
-	        defineProperty(target.prototype, key, descs[key]);
-	      }
-	    }
-	  }
-	}
-	
-	function mixin() {
-	  for (var _len = arguments.length, mixins = Array(_len), _key = 0; _key < _len; _key++) {
-	    mixins[_key] = arguments[_key];
-	  }
-	
-	  if (typeof mixins[0] === 'function') {
-	    return handleClass(mixins[0], []);
-	  } else {
-	    return function (target) {
-	      return handleClass(target, mixins);
-	    };
-	  }
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 320 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }; })();
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	exports['default'] = time;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	var labels = {};
-	
-	// Exported for mocking in tests
-	var defaultConsole = {
-	  time: console.time ? console.time.bind(console) : function (label) {
-	    labels[label] = new Date();
-	  },
-	  timeEnd: console.timeEnd ? console.timeEnd.bind(console) : function (label) {
-	    var timeNow = new Date();
-	    var timeTaken = timeNow - labels[label];
-	    delete labels[label];
-	    console.log(label + ': ' + timeTaken + 'ms');
-	  }
-	};
-	
-	exports.defaultConsole = defaultConsole;
-	var count = 0;
-	
-	function handleDescriptor(target, key, descriptor, _ref) {
-	  var _ref2 = _slicedToArray(_ref, 2);
-	
-	  var _ref2$0 = _ref2[0];
-	  var prefix = _ref2$0 === undefined ? null : _ref2$0;
-	  var _ref2$1 = _ref2[1];
-	  var console = _ref2$1 === undefined ? defaultConsole : _ref2$1;
-	
-	  var fn = descriptor.value;
-	
-	  if (prefix === null) {
-	    prefix = target.constructor.name + '.' + key;
-	  }
-	
-	  if (typeof fn !== 'function') {
-	    throw new SyntaxError('@time can only be used on functions, not: ' + fn);
-	  }
-	
-	  return _extends({}, descriptor, {
-	    value: function value() {
-	      var label = prefix + '-' + count;
-	      count++;
-	      console.time(label);
-	
-	      try {
-	        return fn.apply(this, arguments);
-	      } finally {
-	        console.timeEnd(label);
-	      }
-	    }
-	  });
-	}
-	
-	function time() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-
-/***/ }),
-/* 321 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	exports['default'] = extendDescriptor;
-	
-	var _privateUtils = __webpack_require__(306);
-	
-	var getPrototypeOf = Object.getPrototypeOf;
-	var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-	
-	function handleDescriptor(target, key, descriptor) {
-	  var superKlass = getPrototypeOf(target);
-	  var superDesc = getOwnPropertyDescriptor(superKlass, key);
-	
-	  return _extends({}, superDesc, {
-	    value: descriptor.value,
-	    initializer: descriptor.initializer,
-	    get: descriptor.get || superDesc.get,
-	    set: descriptor.set || superDesc.set
-	  });
-	}
-	
-	function extendDescriptor() {
-	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	    args[_key] = arguments[_key];
-	  }
-	
-	  return (0, _privateUtils.decorate)(handleDescriptor, args);
-	}
-	
-	module.exports = exports['default'];
-
-/***/ }),
-/* 322 */
-/***/ (function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports["default"] = applyDecorators;
-	var defineProperty = Object.defineProperty;
-	var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-	
-	function applyDecorators(Class, props) {
-	  var prototype = Class.prototype;
-	
-	  for (var key in props) {
-	    var decorators = props[key];
-	
-	    for (var i = 0, l = decorators.length; i < l; i++) {
-	      var decorator = decorators[i];
-	
-	      defineProperty(prototype, key, decorator(prototype, key, getOwnPropertyDescriptor(prototype, key)));
-	    }
-	  }
-	
-	  return Class;
-	}
-	
-	module.exports = exports["default"];
-
-/***/ }),
-/* 323 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _redux = __webpack_require__(195);
-	
-	var _reducers = __webpack_require__(300);
-	
-	var _reducers2 = _interopRequireDefault(_reducers);
-	
-	var _reduxLogger = __webpack_require__(324);
-	
-	var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
-	
-	var _reduxThunk = __webpack_require__(330);
-	
-	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)((0, _reduxLogger2.default)({ collapsed: true }), _reduxThunk2.default));
-	
-	exports.default = store;
-
-/***/ }),
-/* 324 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.logger = exports.defaults = undefined;
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _core = __webpack_require__(325);
-	
-	var _helpers = __webpack_require__(326);
-	
-	var _defaults = __webpack_require__(329);
-	
-	var _defaults2 = _interopRequireDefault(_defaults);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/**
-	 * Creates logger with following options
-	 *
-	 * @namespace
-	 * @param {object} options - options for logger
-	 * @param {string | function | object} options.level - console[level]
-	 * @param {boolean} options.duration - print duration of each action?
-	 * @param {boolean} options.timestamp - print timestamp with each action?
-	 * @param {object} options.colors - custom colors
-	 * @param {object} options.logger - implementation of the `console` API
-	 * @param {boolean} options.logErrors - should errors in action execution be caught, logged, and re-thrown?
-	 * @param {boolean} options.collapsed - is group collapsed?
-	 * @param {boolean} options.predicate - condition which resolves logger behavior
-	 * @param {function} options.stateTransformer - transform state before print
-	 * @param {function} options.actionTransformer - transform action before print
-	 * @param {function} options.errorTransformer - transform error before print
-	 *
-	 * @returns {function} logger middleware
-	 */
-	function createLogger() {
-	  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-	
-	  var loggerOptions = _extends({}, _defaults2.default, options);
-	
-	  var logger = loggerOptions.logger,
-	      transformer = loggerOptions.transformer,
-	      stateTransformer = loggerOptions.stateTransformer,
-	      errorTransformer = loggerOptions.errorTransformer,
-	      predicate = loggerOptions.predicate,
-	      logErrors = loggerOptions.logErrors,
-	      diffPredicate = loggerOptions.diffPredicate;
-	
-	  // Return if 'console' object is not defined
-	
-	  if (typeof logger === 'undefined') {
-	    return function () {
-	      return function (next) {
-	        return function (action) {
-	          return next(action);
-	        };
-	      };
-	    };
-	  }
-	
-	  if (transformer) {
-	    console.error('Option \'transformer\' is deprecated, use \'stateTransformer\' instead!'); // eslint-disable-line no-console
-	  }
-	
-	  // Detect if 'createLogger' was passed directly to 'applyMiddleware'.
-	  if (options.getState && options.dispatch) {
-	    // eslint-disable-next-line no-console
-	    console.error('[redux-logger] redux-logger not installed. Make sure to pass logger instance as middleware:\n\n// Logger with default options\nimport { logger } from \'redux-logger\'\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n\n\n// Or you can create your own logger with custom options http://bit.ly/redux-logger-options\nimport createLogger from \'redux-logger\'\n\nconst logger = createLogger({\n  // ...options\n});\n\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n');
-	
-	    return function () {
-	      return function (next) {
-	        return function (action) {
-	          return next(action);
-	        };
-	      };
-	    };
-	  }
-	
-	  var logBuffer = [];
-	
-	  return function (_ref) {
-	    var getState = _ref.getState;
-	    return function (next) {
-	      return function (action) {
-	        // Exit early if predicate function returns 'false'
-	        if (typeof predicate === 'function' && !predicate(getState, action)) {
-	          return next(action);
-	        }
-	
-	        var logEntry = {};
-	        logBuffer.push(logEntry);
-	
-	        logEntry.started = _helpers.timer.now();
-	        logEntry.startedTime = new Date();
-	        logEntry.prevState = stateTransformer(getState());
-	        logEntry.action = action;
-	
-	        var returnedValue = void 0;
-	        if (logErrors) {
-	          try {
-	            returnedValue = next(action);
-	          } catch (e) {
-	            logEntry.error = errorTransformer(e);
-	          }
-	        } else {
-	          returnedValue = next(action);
-	        }
-	
-	        logEntry.took = _helpers.timer.now() - logEntry.started;
-	        logEntry.nextState = stateTransformer(getState());
-	
-	        var diff = loggerOptions.diff && typeof diffPredicate === 'function' ? diffPredicate(getState, action) : loggerOptions.diff;
-	
-	        (0, _core.printBuffer)(logBuffer, _extends({}, loggerOptions, { diff: diff }));
-	        logBuffer.length = 0;
-	
-	        if (logEntry.error) throw logEntry.error;
-	        return returnedValue;
-	      };
-	    };
-	  };
-	}
-	
-	var defaultLogger = createLogger();
-	
-	exports.defaults = _defaults2.default;
-	exports.logger = defaultLogger;
-	exports.default = createLogger;
-	module.exports = exports['default'];
-
-
-/***/ }),
-/* 325 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-	
-	exports.printBuffer = printBuffer;
-	
-	var _helpers = __webpack_require__(326);
-	
-	var _diff = __webpack_require__(327);
-	
-	var _diff2 = _interopRequireDefault(_diff);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-	
-	/**
-	 * Get log level string based on supplied params
-	 *
-	 * @param {string | function | object} level - console[level]
-	 * @param {object} action - selected action
-	 * @param {array} payload - selected payload
-	 * @param {string} type - log entry type
-	 *
-	 * @returns {string} level
-	 */
-	function getLogLevel(level, action, payload, type) {
-	  switch (typeof level === 'undefined' ? 'undefined' : _typeof(level)) {
-	    case 'object':
-	      return typeof level[type] === 'function' ? level[type].apply(level, _toConsumableArray(payload)) : level[type];
-	    case 'function':
-	      return level(action);
-	    default:
-	      return level;
-	  }
-	}
-	
-	function defaultTitleFormatter(options) {
-	  var timestamp = options.timestamp,
-	      duration = options.duration;
-	
-	
-	  return function (action, time, took) {
-	    var parts = ['action'];
-	
-	    parts.push('%c' + String(action.type));
-	    if (timestamp) parts.push('%c@ ' + time);
-	    if (duration) parts.push('%c(in ' + took.toFixed(2) + ' ms)');
-	
-	    return parts.join(' ');
-	  };
-	}
-	
-	function printBuffer(buffer, options) {
-	  var logger = options.logger,
-	      actionTransformer = options.actionTransformer,
-	      _options$titleFormatt = options.titleFormatter,
-	      titleFormatter = _options$titleFormatt === undefined ? defaultTitleFormatter(options) : _options$titleFormatt,
-	      collapsed = options.collapsed,
-	      colors = options.colors,
-	      level = options.level,
-	      diff = options.diff;
-	
-	
-	  buffer.forEach(function (logEntry, key) {
-	    var started = logEntry.started,
-	        startedTime = logEntry.startedTime,
-	        action = logEntry.action,
-	        prevState = logEntry.prevState,
-	        error = logEntry.error;
-	    var took = logEntry.took,
-	        nextState = logEntry.nextState;
-	
-	    var nextEntry = buffer[key + 1];
-	
-	    if (nextEntry) {
-	      nextState = nextEntry.prevState;
-	      took = nextEntry.started - started;
-	    }
-	
-	    // Message
-	    var formattedAction = actionTransformer(action);
-	    var isCollapsed = typeof collapsed === 'function' ? collapsed(function () {
-	      return nextState;
-	    }, action, logEntry) : collapsed;
-	
-	    var formattedTime = (0, _helpers.formatTime)(startedTime);
-	    var titleCSS = colors.title ? 'color: ' + colors.title(formattedAction) + ';' : '';
-	    var headerCSS = ['color: gray; font-weight: lighter;'];
-	    headerCSS.push(titleCSS);
-	    if (options.timestamp) headerCSS.push('color: gray; font-weight: lighter;');
-	    if (options.duration) headerCSS.push('color: gray; font-weight: lighter;');
-	    var title = titleFormatter(formattedAction, formattedTime, took);
-	
-	    // Render
-	    try {
-	      if (isCollapsed) {
-	        if (colors.title) logger.groupCollapsed.apply(logger, ['%c ' + title].concat(headerCSS));else logger.groupCollapsed(title);
-	      } else {
-	        if (colors.title) logger.group.apply(logger, ['%c ' + title].concat(headerCSS));else logger.group(title);
-	      }
-	    } catch (e) {
-	      logger.log(title);
-	    }
-	
-	    var prevStateLevel = getLogLevel(level, formattedAction, [prevState], 'prevState');
-	    var actionLevel = getLogLevel(level, formattedAction, [formattedAction], 'action');
-	    var errorLevel = getLogLevel(level, formattedAction, [error, prevState], 'error');
-	    var nextStateLevel = getLogLevel(level, formattedAction, [nextState], 'nextState');
-	
-	    if (prevStateLevel) {
-	      if (colors.prevState) logger[prevStateLevel]('%c prev state', 'color: ' + colors.prevState(prevState) + '; font-weight: bold', prevState);else logger[prevStateLevel]('prev state', prevState);
-	    }
-	
-	    if (actionLevel) {
-	      if (colors.action) logger[actionLevel]('%c action    ', 'color: ' + colors.action(formattedAction) + '; font-weight: bold', formattedAction);else logger[actionLevel]('action    ', formattedAction);
-	    }
-	
-	    if (error && errorLevel) {
-	      if (colors.error) logger[errorLevel]('%c error     ', 'color: ' + colors.error(error, prevState) + '; font-weight: bold;', error);else logger[errorLevel]('error     ', error);
-	    }
-	
-	    if (nextStateLevel) {
-	      if (colors.nextState) logger[nextStateLevel]('%c next state', 'color: ' + colors.nextState(nextState) + '; font-weight: bold', nextState);else logger[nextStateLevel]('next state', nextState);
-	    }
-	
-	    if (diff) {
-	      (0, _diff2.default)(prevState, nextState, logger, isCollapsed);
-	    }
-	
-	    try {
-	      logger.groupEnd();
-	    } catch (e) {
-	      logger.log('\u2014\u2014 log end \u2014\u2014');
-	    }
-	  });
-	}
-
-/***/ }),
-/* 326 */
-/***/ (function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var repeat = exports.repeat = function repeat(str, times) {
-	  return new Array(times + 1).join(str);
-	};
-	
-	var pad = exports.pad = function pad(num, maxLength) {
-	  return repeat("0", maxLength - num.toString().length) + num;
-	};
-	
-	var formatTime = exports.formatTime = function formatTime(time) {
-	  return pad(time.getHours(), 2) + ":" + pad(time.getMinutes(), 2) + ":" + pad(time.getSeconds(), 2) + "." + pad(time.getMilliseconds(), 3);
-	};
-	
-	// Use performance API if it's available in order to get better precision
-	var timer = exports.timer = typeof performance !== "undefined" && performance !== null && typeof performance.now === "function" ? performance : Date;
-
-/***/ }),
-/* 327 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = diffLogger;
-	
-	var _deepDiff = __webpack_require__(328);
-	
-	var _deepDiff2 = _interopRequireDefault(_deepDiff);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-	
-	// https://github.com/flitbit/diff#differences
-	var dictionary = {
-	  'E': {
-	    color: '#2196F3',
-	    text: 'CHANGED:'
-	  },
-	  'N': {
-	    color: '#4CAF50',
-	    text: 'ADDED:'
-	  },
-	  'D': {
-	    color: '#F44336',
-	    text: 'DELETED:'
-	  },
-	  'A': {
-	    color: '#2196F3',
-	    text: 'ARRAY:'
-	  }
-	};
-	
-	function style(kind) {
-	  return 'color: ' + dictionary[kind].color + '; font-weight: bold';
-	}
-	
-	function render(diff) {
-	  var kind = diff.kind,
-	      path = diff.path,
-	      lhs = diff.lhs,
-	      rhs = diff.rhs,
-	      index = diff.index,
-	      item = diff.item;
-	
-	
-	  switch (kind) {
-	    case 'E':
-	      return [path.join('.'), lhs, '\u2192', rhs];
-	    case 'N':
-	      return [path.join('.'), rhs];
-	    case 'D':
-	      return [path.join('.')];
-	    case 'A':
-	      return [path.join('.') + '[' + index + ']', item];
-	    default:
-	      return [];
-	  }
-	}
-	
-	function diffLogger(prevState, newState, logger, isCollapsed) {
-	  var diff = (0, _deepDiff2.default)(prevState, newState);
-	
-	  try {
-	    if (isCollapsed) {
-	      logger.groupCollapsed('diff');
-	    } else {
-	      logger.group('diff');
-	    }
-	  } catch (e) {
-	    logger.log('diff');
-	  }
-	
-	  if (diff) {
-	    diff.forEach(function (elem) {
-	      var kind = elem.kind;
-	
-	      var output = render(elem);
-	
-	      logger.log.apply(logger, ['%c ' + dictionary[kind].text, style(kind)].concat(_toConsumableArray(output)));
-	    });
-	  } else {
-	    logger.log('\u2014\u2014 no diff \u2014\u2014');
-	  }
-	
-	  try {
-	    logger.groupEnd();
-	  } catch (e) {
-	    logger.log('\u2014\u2014 diff end \u2014\u2014 ');
-	  }
-	}
-	module.exports = exports['default'];
-
-/***/ }),
-/* 328 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {/*!
-	 * deep-diff.
-	 * Licensed under the MIT License.
-	 */
-	;(function(root, factory) {
-	  'use strict';
-	  if (true) {
-	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-	      return factory();
-	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if (typeof exports === 'object') {
-	    // Node. Does not work with strict CommonJS, but
-	    // only CommonJS-like environments that support module.exports,
-	    // like Node.
-	    module.exports = factory();
-	  } else {
-	    // Browser globals (root is window)
-	    root.DeepDiff = factory();
-	  }
-	}(this, function(undefined) {
-	  'use strict';
-	
-	  var $scope, conflict, conflictResolution = [];
-	  if (typeof global === 'object' && global) {
-	    $scope = global;
-	  } else if (typeof window !== 'undefined') {
-	    $scope = window;
-	  } else {
-	    $scope = {};
-	  }
-	  conflict = $scope.DeepDiff;
-	  if (conflict) {
-	    conflictResolution.push(
-	      function() {
-	        if ('undefined' !== typeof conflict && $scope.DeepDiff === accumulateDiff) {
-	          $scope.DeepDiff = conflict;
-	          conflict = undefined;
-	        }
-	      });
-	  }
-	
-	  // nodejs compatible on server side and in the browser.
-	  function inherits(ctor, superCtor) {
-	    ctor.super_ = superCtor;
-	    ctor.prototype = Object.create(superCtor.prototype, {
-	      constructor: {
-	        value: ctor,
-	        enumerable: false,
-	        writable: true,
-	        configurable: true
-	      }
-	    });
-	  }
-	
-	  function Diff(kind, path) {
-	    Object.defineProperty(this, 'kind', {
-	      value: kind,
-	      enumerable: true
-	    });
-	    if (path && path.length) {
-	      Object.defineProperty(this, 'path', {
-	        value: path,
-	        enumerable: true
-	      });
-	    }
-	  }
-	
-	  function DiffEdit(path, origin, value) {
-	    DiffEdit.super_.call(this, 'E', path);
-	    Object.defineProperty(this, 'lhs', {
-	      value: origin,
-	      enumerable: true
-	    });
-	    Object.defineProperty(this, 'rhs', {
-	      value: value,
-	      enumerable: true
-	    });
-	  }
-	  inherits(DiffEdit, Diff);
-	
-	  function DiffNew(path, value) {
-	    DiffNew.super_.call(this, 'N', path);
-	    Object.defineProperty(this, 'rhs', {
-	      value: value,
-	      enumerable: true
-	    });
-	  }
-	  inherits(DiffNew, Diff);
-	
-	  function DiffDeleted(path, value) {
-	    DiffDeleted.super_.call(this, 'D', path);
-	    Object.defineProperty(this, 'lhs', {
-	      value: value,
-	      enumerable: true
-	    });
-	  }
-	  inherits(DiffDeleted, Diff);
-	
-	  function DiffArray(path, index, item) {
-	    DiffArray.super_.call(this, 'A', path);
-	    Object.defineProperty(this, 'index', {
-	      value: index,
-	      enumerable: true
-	    });
-	    Object.defineProperty(this, 'item', {
-	      value: item,
-	      enumerable: true
-	    });
-	  }
-	  inherits(DiffArray, Diff);
-	
-	  function arrayRemove(arr, from, to) {
-	    var rest = arr.slice((to || from) + 1 || arr.length);
-	    arr.length = from < 0 ? arr.length + from : from;
-	    arr.push.apply(arr, rest);
-	    return arr;
-	  }
-	
-	  function realTypeOf(subject) {
-	    var type = typeof subject;
-	    if (type !== 'object') {
-	      return type;
-	    }
-	
-	    if (subject === Math) {
-	      return 'math';
-	    } else if (subject === null) {
-	      return 'null';
-	    } else if (Array.isArray(subject)) {
-	      return 'array';
-	    } else if (Object.prototype.toString.call(subject) === '[object Date]') {
-	      return 'date';
-	    } else if (typeof subject.toString !== 'undefined' && /^\/.*\//.test(subject.toString())) {
-	      return 'regexp';
-	    }
-	    return 'object';
-	  }
-	
-	  function deepDiff(lhs, rhs, changes, prefilter, path, key, stack) {
-	    path = path || [];
-	    var currentPath = path.slice(0);
-	    if (typeof key !== 'undefined') {
-	      if (prefilter) {
-	        if (typeof(prefilter) === 'function' && prefilter(currentPath, key)) { return; }
-	        else if (typeof(prefilter) === 'object') {
-	          if (prefilter.prefilter && prefilter.prefilter(currentPath, key)) { return; }
-	          if (prefilter.normalize) {
-	            var alt = prefilter.normalize(currentPath, key, lhs, rhs);
-	            if (alt) {
-	              lhs = alt[0];
-	              rhs = alt[1];
-	            }
-	          }
-	        }
-	      }
-	      currentPath.push(key);
-	    }
-	
-	    // Use string comparison for regexes
-	    if (realTypeOf(lhs) === 'regexp' && realTypeOf(rhs) === 'regexp') {
-	      lhs = lhs.toString();
-	      rhs = rhs.toString();
-	    }
-	
-	    var ltype = typeof lhs;
-	    var rtype = typeof rhs;
-	    if (ltype === 'undefined') {
-	      if (rtype !== 'undefined') {
-	        changes(new DiffNew(currentPath, rhs));
-	      }
-	    } else if (rtype === 'undefined') {
-	      changes(new DiffDeleted(currentPath, lhs));
-	    } else if (realTypeOf(lhs) !== realTypeOf(rhs)) {
-	      changes(new DiffEdit(currentPath, lhs, rhs));
-	    } else if (Object.prototype.toString.call(lhs) === '[object Date]' && Object.prototype.toString.call(rhs) === '[object Date]' && ((lhs - rhs) !== 0)) {
-	      changes(new DiffEdit(currentPath, lhs, rhs));
-	    } else if (ltype === 'object' && lhs !== null && rhs !== null) {
-	      stack = stack || [];
-	      if (stack.indexOf(lhs) < 0) {
-	        stack.push(lhs);
-	        if (Array.isArray(lhs)) {
-	          var i, len = lhs.length;
-	          for (i = 0; i < lhs.length; i++) {
-	            if (i >= rhs.length) {
-	              changes(new DiffArray(currentPath, i, new DiffDeleted(undefined, lhs[i])));
-	            } else {
-	              deepDiff(lhs[i], rhs[i], changes, prefilter, currentPath, i, stack);
-	            }
-	          }
-	          while (i < rhs.length) {
-	            changes(new DiffArray(currentPath, i, new DiffNew(undefined, rhs[i++])));
-	          }
-	        } else {
-	          var akeys = Object.keys(lhs);
-	          var pkeys = Object.keys(rhs);
-	          akeys.forEach(function(k, i) {
-	            var other = pkeys.indexOf(k);
-	            if (other >= 0) {
-	              deepDiff(lhs[k], rhs[k], changes, prefilter, currentPath, k, stack);
-	              pkeys = arrayRemove(pkeys, other);
-	            } else {
-	              deepDiff(lhs[k], undefined, changes, prefilter, currentPath, k, stack);
-	            }
-	          });
-	          pkeys.forEach(function(k) {
-	            deepDiff(undefined, rhs[k], changes, prefilter, currentPath, k, stack);
-	          });
-	        }
-	        stack.length = stack.length - 1;
-	      }
-	    } else if (lhs !== rhs) {
-	      if (!(ltype === 'number' && isNaN(lhs) && isNaN(rhs))) {
-	        changes(new DiffEdit(currentPath, lhs, rhs));
-	      }
-	    }
-	  }
-	
-	  function accumulateDiff(lhs, rhs, prefilter, accum) {
-	    accum = accum || [];
-	    deepDiff(lhs, rhs,
-	      function(diff) {
-	        if (diff) {
-	          accum.push(diff);
-	        }
-	      },
-	      prefilter);
-	    return (accum.length) ? accum : undefined;
-	  }
-	
-	  function applyArrayChange(arr, index, change) {
-	    if (change.path && change.path.length) {
-	      var it = arr[index],
-	          i, u = change.path.length - 1;
-	      for (i = 0; i < u; i++) {
-	        it = it[change.path[i]];
-	      }
-	      switch (change.kind) {
-	        case 'A':
-	          applyArrayChange(it[change.path[i]], change.index, change.item);
-	          break;
-	        case 'D':
-	          delete it[change.path[i]];
-	          break;
-	        case 'E':
-	        case 'N':
-	          it[change.path[i]] = change.rhs;
-	          break;
-	      }
-	    } else {
-	      switch (change.kind) {
-	        case 'A':
-	          applyArrayChange(arr[index], change.index, change.item);
-	          break;
-	        case 'D':
-	          arr = arrayRemove(arr, index);
-	          break;
-	        case 'E':
-	        case 'N':
-	          arr[index] = change.rhs;
-	          break;
-	      }
-	    }
-	    return arr;
-	  }
-	
-	  function applyChange(target, source, change) {
-	    if (target && source && change && change.kind) {
-	      var it = target,
-	          i = -1,
-	          last = change.path ? change.path.length - 1 : 0;
-	      while (++i < last) {
-	        if (typeof it[change.path[i]] === 'undefined') {
-	          it[change.path[i]] = (typeof change.path[i] === 'number') ? [] : {};
-	        }
-	        it = it[change.path[i]];
-	      }
-	      switch (change.kind) {
-	        case 'A':
-	          applyArrayChange(change.path ? it[change.path[i]] : it, change.index, change.item);
-	          break;
-	        case 'D':
-	          delete it[change.path[i]];
-	          break;
-	        case 'E':
-	        case 'N':
-	          it[change.path[i]] = change.rhs;
-	          break;
-	      }
-	    }
-	  }
-	
-	  function revertArrayChange(arr, index, change) {
-	    if (change.path && change.path.length) {
-	      // the structure of the object at the index has changed...
-	      var it = arr[index],
-	          i, u = change.path.length - 1;
-	      for (i = 0; i < u; i++) {
-	        it = it[change.path[i]];
-	      }
-	      switch (change.kind) {
-	        case 'A':
-	          revertArrayChange(it[change.path[i]], change.index, change.item);
-	          break;
-	        case 'D':
-	          it[change.path[i]] = change.lhs;
-	          break;
-	        case 'E':
-	          it[change.path[i]] = change.lhs;
-	          break;
-	        case 'N':
-	          delete it[change.path[i]];
-	          break;
-	      }
-	    } else {
-	      // the array item is different...
-	      switch (change.kind) {
-	        case 'A':
-	          revertArrayChange(arr[index], change.index, change.item);
-	          break;
-	        case 'D':
-	          arr[index] = change.lhs;
-	          break;
-	        case 'E':
-	          arr[index] = change.lhs;
-	          break;
-	        case 'N':
-	          arr = arrayRemove(arr, index);
-	          break;
-	      }
-	    }
-	    return arr;
-	  }
-	
-	  function revertChange(target, source, change) {
-	    if (target && source && change && change.kind) {
-	      var it = target,
-	          i, u;
-	      u = change.path.length - 1;
-	      for (i = 0; i < u; i++) {
-	        if (typeof it[change.path[i]] === 'undefined') {
-	          it[change.path[i]] = {};
-	        }
-	        it = it[change.path[i]];
-	      }
-	      switch (change.kind) {
-	        case 'A':
-	          // Array was modified...
-	          // it will be an array...
-	          revertArrayChange(it[change.path[i]], change.index, change.item);
-	          break;
-	        case 'D':
-	          // Item was deleted...
-	          it[change.path[i]] = change.lhs;
-	          break;
-	        case 'E':
-	          // Item was edited...
-	          it[change.path[i]] = change.lhs;
-	          break;
-	        case 'N':
-	          // Item is new...
-	          delete it[change.path[i]];
-	          break;
-	      }
-	    }
-	  }
-	
-	  function applyDiff(target, source, filter) {
-	    if (target && source) {
-	      var onChange = function(change) {
-	        if (!filter || filter(target, source, change)) {
-	          applyChange(target, source, change);
-	        }
-	      };
-	      deepDiff(target, source, onChange);
-	    }
-	  }
-	
-	  Object.defineProperties(accumulateDiff, {
-	
-	    diff: {
-	      value: accumulateDiff,
-	      enumerable: true
-	    },
-	    observableDiff: {
-	      value: deepDiff,
-	      enumerable: true
-	    },
-	    applyDiff: {
-	      value: applyDiff,
-	      enumerable: true
-	    },
-	    applyChange: {
-	      value: applyChange,
-	      enumerable: true
-	    },
-	    revertChange: {
-	      value: revertChange,
-	      enumerable: true
-	    },
-	    isConflict: {
-	      value: function() {
-	        return 'undefined' !== typeof conflict;
-	      },
-	      enumerable: true
-	    },
-	    noConflict: {
-	      value: function() {
-	        if (conflictResolution) {
-	          conflictResolution.forEach(function(it) {
-	            it();
-	          });
-	          conflictResolution = null;
-	        }
-	        return accumulateDiff;
-	      },
-	      enumerable: true
-	    }
-	  });
-	
-	  return accumulateDiff;
-	}));
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ }),
-/* 329 */
-/***/ (function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {
-	  level: "log",
-	  logger: console,
-	  logErrors: true,
-	  collapsed: undefined,
-	  predicate: undefined,
-	  duration: false,
-	  timestamp: true,
-	  stateTransformer: function stateTransformer(state) {
-	    return state;
-	  },
-	  actionTransformer: function actionTransformer(action) {
-	    return action;
-	  },
-	  errorTransformer: function errorTransformer(error) {
-	    return error;
-	  },
-	  colors: {
-	    title: function title() {
-	      return "inherit";
-	    },
-	    prevState: function prevState() {
-	      return "#9E9E9E";
-	    },
-	    action: function action() {
-	      return "#03A9F4";
-	    },
-	    nextState: function nextState() {
-	      return "#4CAF50";
-	    },
-	    error: function error() {
-	      return "#F20404";
-	    }
-	  },
-	  diff: false,
-	  diffPredicate: undefined,
-	
-	  // Deprecated options
-	  transformer: undefined
-	};
-	module.exports = exports["default"];
-
-/***/ }),
-/* 330 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	exports.__esModule = true;
-	function createThunkMiddleware(extraArgument) {
-	  return function (_ref) {
-	    var dispatch = _ref.dispatch,
-	        getState = _ref.getState;
-	    return function (next) {
-	      return function (action) {
-	        if (typeof action === 'function') {
-	          return action(dispatch, getState, extraArgument);
-	        }
-	
-	        return next(action);
-	      };
-	    };
-	  };
-	}
-	
-	var thunk = createThunkMiddleware();
-	thunk.withExtraArgument = createThunkMiddleware;
-	
-	exports['default'] = thunk;
-
-/***/ }),
-/* 331 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactSpeechRecognition = __webpack_require__(302);
-	
-	var _reactSpeechRecognition2 = _interopRequireDefault(_reactSpeechRecognition);
-	
-	var _reducers = __webpack_require__(300);
-	
-	var _reactRedux = __webpack_require__(186);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	// this came with the component
-	var propTypes = {
-	    // Props injected by SpeechRecognition
-	    transcript: _react.PropTypes.string,
-	    resetTranscript: _react.PropTypes.func,
-	    browserSupportsSpeechRecognition: _react.PropTypes.bool
-	};
-	
-	var Dictaphone = function (_Component) {
-	    _inherits(Dictaphone, _Component);
-	
-	    function Dictaphone(props) {
-	        _classCallCheck(this, Dictaphone);
-	
-	        var _this = _possibleConstructorReturn(this, (Dictaphone.__proto__ || Object.getPrototypeOf(Dictaphone)).call(this, props));
-	
-	        _this.clickHandler = _this.clickHandler.bind(_this);
-	
-	        return _this;
-	    }
-	
-	    _createClass(Dictaphone, [{
-	        key: 'clickHandler',
-	        value: function clickHandler(sentence) {
-	            console.log(sentence);
-	            var text = {
-	                content: sentence.transcript //transcribed text is an object - sentence.transcript is a string
-	            };
-	            this.props.fetchText(text);
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var _this2 = this;
-	
-	            var _props = this.props,
-	                transcript = _props.transcript,
-	                resetTranscript = _props.resetTranscript,
-	                browserSupportsSpeechRecognition = _props.browserSupportsSpeechRecognition;
-	
-	
-	            if (!browserSupportsSpeechRecognition) {
-	                return null;
-	            }
-	
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'container' },
-	                transcript,
-	                '  ',
-	                _react2.default.createElement('br', null),
-	                ' ',
-	                _react2.default.createElement('br', null),
-	                _react2.default.createElement(
-	                    'button',
-	                    { style: { "margin-right": "5px" }, className: 'btn btn-default', onClick: resetTranscript },
-	                    'Reset'
-	                ),
-	                _react2.default.createElement(
-	                    'button',
-	                    { className: 'btn btn-default', onClick: function onClick() {
-	                            return _this2.clickHandler({ transcript: transcript });
-	                        } },
-	                    'Stop'
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return Dictaphone;
-	}(_react.Component);
-	
-	Dictaphone.propTypes = propTypes;
-	
-	var mapDispatchToProps = { fetchText: _reducers.fetchText };
-	var mapStateToProps = function mapStateToProps(_ref) {
-	    var text = _ref.text;
-	    return { text: text };
-	};
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)((0, _reactSpeechRecognition2.default)(Dictaphone));
-
-/***/ }),
-/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -51077,6 +48325,2764 @@
 	}.call(this));
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(209)(module)))
+
+/***/ }),
+/* 303 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _SpeechRecognition = __webpack_require__(304);
+	
+	var _SpeechRecognition2 = _interopRequireDefault(_SpeechRecognition);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _SpeechRecognition2.default;
+
+/***/ }),
+/* 304 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	exports.default = SpeechRecognition;
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _coreDecorators = __webpack_require__(305);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+	  var desc = {};
+	  Object['ke' + 'ys'](descriptor).forEach(function (key) {
+	    desc[key] = descriptor[key];
+	  });
+	  desc.enumerable = !!desc.enumerable;
+	  desc.configurable = !!desc.configurable;
+	
+	  if ('value' in desc || desc.initializer) {
+	    desc.writable = true;
+	  }
+	
+	  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+	    return decorator(target, property, desc) || desc;
+	  }, desc);
+	
+	  if (context && desc.initializer !== void 0) {
+	    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+	    desc.initializer = undefined;
+	  }
+	
+	  if (desc.initializer === void 0) {
+	    Object['define' + 'Property'](target, property, desc);
+	    desc = null;
+	  }
+	
+	  return desc;
+	}
+	
+	function SpeechRecognition(WrappedComponent) {
+	  var _dec, _desc, _value, _class;
+	
+	  return _dec = (0, _coreDecorators.debounce)(1000), (_class = (function (_Component) {
+	    _inherits(SpeechRecognitionContainer, _Component);
+	
+	    function SpeechRecognitionContainer(props) {
+	      _classCallCheck(this, SpeechRecognitionContainer);
+	
+	      var _this = _possibleConstructorReturn(this, (SpeechRecognitionContainer.__proto__ || Object.getPrototypeOf(SpeechRecognitionContainer)).call(this, props));
+	
+	      _this.state = {
+	        interimTranscript: '',
+	        finalTranscript: '',
+	        recognition: null,
+	        browserSupportsSpeechRecognition: true
+	      };
+	      return _this;
+	    }
+	
+	    _createClass(SpeechRecognitionContainer, [{
+	      key: 'componentWillMount',
+	      value: function componentWillMount() {
+	        var root = typeof window !== 'undefined' ? window : this;
+	        var BrowserSpeechRecognition = root.SpeechRecognition || root.webkitSpeechRecognition || root.mozSpeechRecognition || root.msSpeechRecognition || root.oSpeechRecognition;
+	        if (BrowserSpeechRecognition) {
+	          var recognition = new BrowserSpeechRecognition();
+	          recognition.continuous = true;
+	          recognition.interimResults = true;
+	
+	          recognition.onresult = this.updateTranscript.bind(this);
+	          recognition.onend = this.restartRecognition.bind(this);
+	          recognition.start();
+	          this.setState({ recognition: recognition });
+	        } else {
+	          this.setState({ browserSupportsSpeechRecognition: false });
+	        }
+	      }
+	    }, {
+	      key: 'componentWillUnmount',
+	      value: function componentWillUnmount() {
+	        if (this.state.recognition) {
+	          this.state.recognition.abort();
+	        }
+	      }
+	    }, {
+	      key: 'restartRecognition',
+	      value: function restartRecognition() {
+	        if (this.state.recognition) {
+	          this.state.recognition.start();
+	        }
+	      }
+	    }, {
+	      key: 'updateTranscript',
+	      value: function updateTranscript(event) {
+	        var _getNewTranscript = this.getNewTranscript(event),
+	            finalTranscript = _getNewTranscript.finalTranscript,
+	            interimTranscript = _getNewTranscript.interimTranscript;
+	
+	        this.setState({ finalTranscript: finalTranscript, interimTranscript: interimTranscript });
+	      }
+	    }, {
+	      key: 'getNewTranscript',
+	      value: function getNewTranscript(event) {
+	        var finalTranscript = this.state.finalTranscript;
+	        var interimTranscript = '';
+	        for (var i = event.resultIndex; i < event.results.length; ++i) {
+	          if (event.results[i].isFinal) {
+	            finalTranscript = this.concatTranscripts(finalTranscript, event.results[i][0].transcript);
+	          } else {
+	            interimTranscript = this.concatTranscripts(interimTranscript, event.results[i][0].transcript);
+	          }
+	        }
+	        return { finalTranscript: finalTranscript, interimTranscript: interimTranscript };
+	      }
+	    }, {
+	      key: 'concatTranscripts',
+	      value: function concatTranscripts() {
+	        for (var _len = arguments.length, transcriptParts = Array(_len), _key = 0; _key < _len; _key++) {
+	          transcriptParts[_key] = arguments[_key];
+	        }
+	
+	        return transcriptParts.map(function (t) {
+	          return t.trim();
+	        }).join(' ').trim();
+	      }
+	    }, {
+	      key: 'resetTranscript',
+	      value: function resetTranscript() {
+	        this.setState({ interimTranscript: '', finalTranscript: '' });
+	        if (this.state.recognition) {
+	          this.state.recognition.abort();
+	        }
+	      }
+	    }, {
+	      key: 'render',
+	      value: function render() {
+	        var _state = this.state,
+	            finalTranscript = _state.finalTranscript,
+	            interimTranscript = _state.interimTranscript;
+	
+	        var transcript = this.concatTranscripts(finalTranscript, interimTranscript);
+	
+	        return _react2.default.createElement(WrappedComponent, _extends({
+	          resetTranscript: this.resetTranscript,
+	          transcript: transcript
+	        }, this.state, this.props));
+	      }
+	    }]);
+	
+	    return SpeechRecognitionContainer;
+	  })(_react.Component), (_applyDecoratedDescriptor(_class.prototype, 'restartRecognition', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'restartRecognition'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'resetTranscript', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'resetTranscript'), _class.prototype)), _class);
+	}
+
+/***/ }),
+/* 305 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/**
+	 * core-decorators.js
+	 * (c) 2016 Jay Phelps and contributors
+	 * MIT Licensed
+	 * https://github.com/jayphelps/core-decorators.js
+	 * @license
+	 */
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	function _interopRequire(obj) { return obj && obj.__esModule ? obj['default'] : obj; }
+	
+	var _override = __webpack_require__(306);
+	
+	exports.override = _interopRequire(_override);
+	
+	var _deprecate = __webpack_require__(309);
+	
+	exports.deprecate = _interopRequire(_deprecate);
+	exports.deprecated = _interopRequire(_deprecate);
+	
+	var _suppressWarnings = __webpack_require__(310);
+	
+	exports.suppressWarnings = _interopRequire(_suppressWarnings);
+	
+	var _memoize = __webpack_require__(311);
+	
+	exports.memoize = _interopRequire(_memoize);
+	
+	var _autobind = __webpack_require__(312);
+	
+	exports.autobind = _interopRequire(_autobind);
+	
+	var _readonly = __webpack_require__(313);
+	
+	exports.readonly = _interopRequire(_readonly);
+	
+	var _enumerable = __webpack_require__(314);
+	
+	exports.enumerable = _interopRequire(_enumerable);
+	
+	var _nonenumerable = __webpack_require__(315);
+	
+	exports.nonenumerable = _interopRequire(_nonenumerable);
+	
+	var _nonconfigurable = __webpack_require__(316);
+	
+	exports.nonconfigurable = _interopRequire(_nonconfigurable);
+	
+	var _debounce = __webpack_require__(317);
+	
+	exports.debounce = _interopRequire(_debounce);
+	
+	var _throttle = __webpack_require__(318);
+	
+	exports.throttle = _interopRequire(_throttle);
+	
+	var _decorate = __webpack_require__(319);
+	
+	exports.decorate = _interopRequire(_decorate);
+	
+	var _mixin = __webpack_require__(320);
+	
+	exports.mixin = _interopRequire(_mixin);
+	exports.mixins = _interopRequire(_mixin);
+	
+	var _lazyInitialize = __webpack_require__(308);
+	
+	exports.lazyInitialize = _interopRequire(_lazyInitialize);
+	
+	var _time = __webpack_require__(321);
+	
+	exports.time = _interopRequire(_time);
+	
+	var _extendDescriptor = __webpack_require__(322);
+	
+	exports.extendDescriptor = _interopRequire(_extendDescriptor);
+	
+	// Helper to apply decorators to a class without transpiler support
+	
+	var _applyDecorators = __webpack_require__(323);
+	
+	exports.applyDecorators = _interopRequire(_applyDecorators);
+
+/***/ }),
+/* 306 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	exports['default'] = override;
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	var GENERIC_FUNCTION_ERROR = '{child} does not properly override {parent}';
+	var FUNCTION_REGEXP = /^function ([_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*)?(\([^\)]*\))[\s\S]+$/;
+	
+	var SyntaxErrorReporter = (function () {
+	  _createClass(SyntaxErrorReporter, [{
+	    key: '_getTopic',
+	    value: function _getTopic(descriptor) {
+	      if (descriptor === undefined) {
+	        return null;
+	      }
+	
+	      if ('value' in descriptor) {
+	        return descriptor.value;
+	      }
+	
+	      if ('get' in descriptor) {
+	        return descriptor.get;
+	      }
+	
+	      if ('set' in descriptor) {
+	        return descriptor.set;
+	      }
+	    }
+	  }, {
+	    key: '_extractTopicSignature',
+	    value: function _extractTopicSignature(topic) {
+	      switch (typeof topic) {
+	        case 'function':
+	          return this._extractFunctionSignature(topic);
+	        default:
+	          return this.key;
+	      }
+	    }
+	  }, {
+	    key: '_extractFunctionSignature',
+	    value: function _extractFunctionSignature(fn) {
+	      var _this = this;
+	
+	      return fn.toString().replace(FUNCTION_REGEXP, function (match, name, params) {
+	        if (name === undefined) name = _this.key;
+	        return name + params;
+	      });
+	    }
+	  }, {
+	    key: 'key',
+	    get: function get() {
+	      return this.childDescriptor.key;
+	    }
+	  }, {
+	    key: 'parentNotation',
+	    get: function get() {
+	      return this.parentKlass.constructor.name + '#' + this.parentPropertySignature;
+	    }
+	  }, {
+	    key: 'childNotation',
+	    get: function get() {
+	      return this.childKlass.constructor.name + '#' + this.childPropertySignature;
+	    }
+	  }, {
+	    key: 'parentTopic',
+	    get: function get() {
+	      return this._getTopic(this.parentDescriptor);
+	    }
+	  }, {
+	    key: 'childTopic',
+	    get: function get() {
+	      return this._getTopic(this.childDescriptor);
+	    }
+	  }, {
+	    key: 'parentPropertySignature',
+	    get: function get() {
+	      return this._extractTopicSignature(this.parentTopic);
+	    }
+	  }, {
+	    key: 'childPropertySignature',
+	    get: function get() {
+	      return this._extractTopicSignature(this.childTopic);
+	    }
+	  }]);
+	
+	  function SyntaxErrorReporter(parentKlass, childKlass, parentDescriptor, childDescriptor) {
+	    _classCallCheck(this, SyntaxErrorReporter);
+	
+	    this.parentKlass = parentKlass;
+	    this.childKlass = childKlass;
+	    this.parentDescriptor = parentDescriptor;
+	    this.childDescriptor = childDescriptor;
+	  }
+	
+	  _createClass(SyntaxErrorReporter, [{
+	    key: 'assert',
+	    value: function assert(condition) {
+	      var msg = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
+	
+	      if (condition !== true) {
+	        this.error(GENERIC_FUNCTION_ERROR + msg);
+	      }
+	    }
+	  }, {
+	    key: 'error',
+	    value: function error(msg) {
+	      var _this2 = this;
+	
+	      msg = msg
+	      // Replace lazily, because they actually might not
+	      // be available in all cases
+	      .replace('{parent}', function (m) {
+	        return _this2.parentNotation;
+	      }).replace('{child}', function (m) {
+	        return _this2.childNotation;
+	      });
+	      throw new SyntaxError(msg);
+	    }
+	  }]);
+	
+	  return SyntaxErrorReporter;
+	})();
+	
+	function getDescriptorType(descriptor) {
+	  if (descriptor.hasOwnProperty('value')) {
+	    return 'data';
+	  }
+	
+	  if (descriptor.hasOwnProperty('get') || descriptor.hasOwnProperty('set')) {
+	    return 'accessor';
+	  }
+	
+	  // If none of them exist, browsers treat it as
+	  // a data descriptor with a value of `undefined`
+	  return 'data';
+	}
+	
+	function checkFunctionSignatures(parent, child, reporter) {
+	  reporter.assert(parent.length === child.length);
+	}
+	
+	function checkDataDescriptors(parent, child, reporter) {
+	  var parentValueType = typeof parent.value;
+	  var childValueType = typeof child.value;
+	
+	  if (parentValueType === 'undefined' && childValueType === 'undefined') {
+	    // class properties can be any expression, which isn't ran until the
+	    // the instance is created, so we can't reliably get type information
+	    // for them yet (per spec). Perhaps when Babel includes flow-type info
+	    // in runtime? Tried regex solutions, but super hacky and only feasible
+	    // on primitives, which is confusing for usage...
+	    reporter.error('descriptor values are both undefined. (class properties are are not currently supported)\'');
+	  }
+	
+	  if (parentValueType !== childValueType) {
+	    var isFunctionOverUndefined = childValueType === 'function' && parentValueType === undefined;
+	    // Even though we don't support class properties, this
+	    // will still handle more than just functions, just in case.
+	    // Shadowing an undefined value is an error if the inherited
+	    // value was undefined (usually a class property, not a method)
+	    if (isFunctionOverUndefined || parentValueType !== undefined) {
+	      reporter.error('value types do not match. {parent} is "' + parentValueType + '", {child} is "' + childValueType + '"');
+	    }
+	  }
+	
+	  // Switch, in preparation for supporting more types
+	  switch (childValueType) {
+	    case 'function':
+	      checkFunctionSignatures(parent.value, child.value, reporter);
+	      break;
+	
+	    default:
+	      reporter.error('Unexpected error. Please file a bug with: {parent} is "' + parentValueType + '", {child} is "' + childValueType + '"');
+	      break;
+	  }
+	}
+	
+	function checkAccessorDescriptors(parent, child, reporter) {
+	  var parentHasGetter = typeof parent.get === 'function';
+	  var childHasGetter = typeof child.get === 'function';
+	  var parentHasSetter = typeof parent.set === 'function';
+	  var childHasSetter = typeof child.set === 'function';
+	
+	  if (parentHasGetter || childHasGetter) {
+	    if (!parentHasGetter && parentHasSetter) {
+	      reporter.error('{parent} is setter but {child} is getter');
+	    }
+	
+	    if (!childHasGetter && childHasSetter) {
+	      reporter.error('{parent} is getter but {child} is setter');
+	    }
+	
+	    checkFunctionSignatures(parent.get, child.get, reporter);
+	  }
+	
+	  if (parentHasSetter || childHasSetter) {
+	    if (!parentHasSetter && parentHasGetter) {
+	      reporter.error('{parent} is getter but {child} is setter');
+	    }
+	
+	    if (!childHasSetter && childHasGetter) {
+	      reporter.error('{parent} is setter but {child} is getter');
+	    }
+	
+	    checkFunctionSignatures(parent.set, child.set, reporter);
+	  }
+	}
+	
+	function checkDescriptors(parent, child, reporter) {
+	  var parentType = getDescriptorType(parent);
+	  var childType = getDescriptorType(child);
+	
+	  if (parentType !== childType) {
+	    reporter.error('descriptor types do not match. {parent} is "' + parentType + '", {child} is "' + childType + '"');
+	  }
+	
+	  switch (childType) {
+	    case 'data':
+	      checkDataDescriptors(parent, child, reporter);
+	      break;
+	
+	    case 'accessor':
+	      checkAccessorDescriptors(parent, child, reporter);
+	      break;
+	  }
+	}
+	
+	var suggestionTransforms = [function (key) {
+	  return key.toLowerCase();
+	}, function (key) {
+	  return key.toUpperCase();
+	}, function (key) {
+	  return key + 's';
+	}, function (key) {
+	  return key.slice(0, -1);
+	}, function (key) {
+	  return key.slice(1, key.length);
+	}];
+	
+	function findPossibleAlternatives(superKlass, key) {
+	  for (var i = 0, l = suggestionTransforms.length; i < l; i++) {
+	    var fn = suggestionTransforms[i];
+	    var suggestion = fn(key);
+	
+	    if (suggestion in superKlass) {
+	      return suggestion;
+	    }
+	  }
+	
+	  return null;
+	}
+	
+	function handleDescriptor(target, key, descriptor) {
+	  descriptor.key = key;
+	  var superKlass = Object.getPrototypeOf(target);
+	  var superDescriptor = Object.getOwnPropertyDescriptor(superKlass, key);
+	  var reporter = new SyntaxErrorReporter(superKlass, target, superDescriptor, descriptor);
+	
+	  if (superDescriptor === undefined) {
+	    var suggestedKey = findPossibleAlternatives(superKlass, key);
+	    var suggestion = suggestedKey ? '\n\n  Did you mean "' + suggestedKey + '"?' : '';
+	    reporter.error('No descriptor matching {child} was found on the prototype chain.' + suggestion);
+	  }
+	
+	  checkDescriptors(superDescriptor, descriptor, reporter);
+	
+	  return descriptor;
+	}
+	
+	function override() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 307 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	var _slice = Array.prototype.slice;
+	
+	var _createDecoratedClass = (function () { function defineProperties(target, descriptors, initializers) { for (var i = 0; i < descriptors.length; i++) { var descriptor = descriptors[i]; var decorators = descriptor.decorators; var key = descriptor.key; delete descriptor.key; delete descriptor.decorators; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor || descriptor.initializer) descriptor.writable = true; if (decorators) { for (var f = 0; f < decorators.length; f++) { var decorator = decorators[f]; if (typeof decorator === 'function') { descriptor = decorator(target, key, descriptor) || descriptor; } else { throw new TypeError('The decorator for method ' + descriptor.key + ' is of the invalid type ' + typeof decorator); } } if (descriptor.initializer !== undefined) { initializers[key] = descriptor; continue; } } Object.defineProperty(target, key, descriptor); } } return function (Constructor, protoProps, staticProps, protoInitializers, staticInitializers) { if (protoProps) defineProperties(Constructor.prototype, protoProps, protoInitializers); if (staticProps) defineProperties(Constructor, staticProps, staticInitializers); return Constructor; }; })();
+	
+	exports.isDescriptor = isDescriptor;
+	exports.decorate = decorate;
+	exports.metaFor = metaFor;
+	exports.getOwnPropertyDescriptors = getOwnPropertyDescriptors;
+	exports.createDefaultSetter = createDefaultSetter;
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer ? descriptor.initializer.call(target) : undefined; Object.defineProperty(target, key, descriptor); }
+	
+	var _lazyInitialize = __webpack_require__(308);
+	
+	var _lazyInitialize2 = _interopRequireDefault(_lazyInitialize);
+	
+	var defineProperty = Object.defineProperty;
+	var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+	var getOwnPropertyNames = Object.getOwnPropertyNames;
+	var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+	
+	function isDescriptor(desc) {
+	  if (!desc || !desc.hasOwnProperty) {
+	    return false;
+	  }
+	
+	  var keys = ['value', 'initializer', 'get', 'set'];
+	
+	  for (var i = 0, l = keys.length; i < l; i++) {
+	    if (desc.hasOwnProperty(keys[i])) {
+	      return true;
+	    }
+	  }
+	
+	  return false;
+	}
+	
+	function decorate(handleDescriptor, entryArgs) {
+	  if (isDescriptor(entryArgs[entryArgs.length - 1])) {
+	    return handleDescriptor.apply(undefined, _toConsumableArray(entryArgs).concat([[]]));
+	  } else {
+	    return function () {
+	      return handleDescriptor.apply(undefined, _slice.call(arguments).concat([entryArgs]));
+	    };
+	  }
+	}
+	
+	var Meta = (function () {
+	  var _instanceInitializers = {};
+	
+	  function Meta() {
+	    _classCallCheck(this, Meta);
+	
+	    _defineDecoratedPropertyDescriptor(this, 'debounceTimeoutIds', _instanceInitializers);
+	
+	    _defineDecoratedPropertyDescriptor(this, 'throttleTimeoutIds', _instanceInitializers);
+	
+	    _defineDecoratedPropertyDescriptor(this, 'throttlePreviousTimestamps', _instanceInitializers);
+	  }
+	
+	  _createDecoratedClass(Meta, [{
+	    key: 'debounceTimeoutIds',
+	    decorators: [_lazyInitialize2['default']],
+	    initializer: function initializer() {
+	      return {};
+	    },
+	    enumerable: true
+	  }, {
+	    key: 'throttleTimeoutIds',
+	    decorators: [_lazyInitialize2['default']],
+	    initializer: function initializer() {
+	      return {};
+	    },
+	    enumerable: true
+	  }, {
+	    key: 'throttlePreviousTimestamps',
+	    decorators: [_lazyInitialize2['default']],
+	    initializer: function initializer() {
+	      return {};
+	    },
+	    enumerable: true
+	  }], null, _instanceInitializers);
+	
+	  return Meta;
+	})();
+	
+	var META_KEY = typeof Symbol === 'function' ? Symbol('__core_decorators__') : '__core_decorators__';
+	
+	function metaFor(obj) {
+	  if (obj.hasOwnProperty(META_KEY) === false) {
+	    defineProperty(obj, META_KEY, {
+	      // Defaults: NOT enumerable, configurable, or writable
+	      value: new Meta()
+	    });
+	  }
+	
+	  return obj[META_KEY];
+	}
+	
+	var getOwnKeys = getOwnPropertySymbols ? function (object) {
+	  return getOwnPropertyNames(object).concat(getOwnPropertySymbols(object));
+	} : getOwnPropertyNames;
+	
+	exports.getOwnKeys = getOwnKeys;
+	
+	function getOwnPropertyDescriptors(obj) {
+	  var descs = {};
+	
+	  getOwnKeys(obj).forEach(function (key) {
+	    return descs[key] = getOwnPropertyDescriptor(obj, key);
+	  });
+	
+	  return descs;
+	}
+	
+	function createDefaultSetter(key) {
+	  return function set(newValue) {
+	    Object.defineProperty(this, key, {
+	      configurable: true,
+	      writable: true,
+	      // IS enumerable when reassigned by the outside word
+	      enumerable: true,
+	      value: newValue
+	    });
+	
+	    return newValue;
+	  };
+	}
+
+/***/ }),
+/* 308 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports['default'] = lazyInitialize;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	var defineProperty = Object.defineProperty;
+	
+	function handleDescriptor(target, key, descriptor) {
+	  var configurable = descriptor.configurable;
+	  var enumerable = descriptor.enumerable;
+	  var initializer = descriptor.initializer;
+	  var value = descriptor.value;
+	
+	  return {
+	    configurable: configurable,
+	    enumerable: enumerable,
+	
+	    get: function get() {
+	      // This happens if someone accesses the
+	      // property directly on the prototype
+	      if (this === target) {
+	        return;
+	      }
+	
+	      var ret = initializer ? initializer.call(this) : value;
+	
+	      defineProperty(this, key, {
+	        configurable: configurable,
+	        enumerable: enumerable,
+	        writable: true,
+	        value: ret
+	      });
+	
+	      return ret;
+	    },
+	
+	    set: (0, _privateUtils.createDefaultSetter)(key)
+	  };
+	}
+	
+	function lazyInitialize() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 309 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }; })();
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	exports['default'] = deprecate;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	var DEFAULT_MSG = 'This function will be removed in future versions.';
+	
+	function handleDescriptor(target, key, descriptor, _ref) {
+	  var _ref2 = _slicedToArray(_ref, 2);
+	
+	  var _ref2$0 = _ref2[0];
+	  var msg = _ref2$0 === undefined ? DEFAULT_MSG : _ref2$0;
+	  var _ref2$1 = _ref2[1];
+	  var options = _ref2$1 === undefined ? {} : _ref2$1;
+	
+	  if (typeof descriptor.value !== 'function') {
+	    throw new SyntaxError('Only functions can be marked as deprecated');
+	  }
+	
+	  var methodSignature = target.constructor.name + '#' + key;
+	
+	  if (options.url) {
+	    msg += '\n\n    See ' + options.url + ' for more details.\n\n';
+	  }
+	
+	  return _extends({}, descriptor, {
+	    value: function deprecationWrapper() {
+	      console.warn('DEPRECATION ' + methodSignature + ': ' + msg);
+	      return descriptor.value.apply(this, arguments);
+	    }
+	  });
+	}
+	
+	function deprecate() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 310 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	exports['default'] = suppressWarnings;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	function suppressedWarningNoop() {
+	  // Warnings are currently suppressed via @suppressWarnings
+	}
+	
+	function applyWithoutWarnings(context, fn, args) {
+	  if (typeof console === 'object') {
+	    var nativeWarn = console.warn;
+	    console.warn = suppressedWarningNoop;
+	    var ret = fn.apply(context, args);
+	    console.warn = nativeWarn;
+	    return ret;
+	  } else {
+	    return fn.apply(context, args);
+	  }
+	}
+	
+	function handleDescriptor(target, key, descriptor) {
+	  return _extends({}, descriptor, {
+	    value: function suppressWarningsWrapper() {
+	      return applyWithoutWarnings(this, descriptor.value, arguments);
+	    }
+	  });
+	}
+	
+	function suppressWarnings() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 311 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	exports['default'] = memoize;
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	function toObject(cache, value) {
+	  if (value === Object(value)) {
+	    return value;
+	  }
+	  return cache[value] || (cache[value] = {});
+	}
+	
+	function applyAndCache(context, fn, args, cache, signature) {
+	  var ret = fn.apply(context, args);
+	  cache[signature] = ret;
+	  return ret;
+	}
+	
+	function metaForDescriptor(descriptor) {
+	  var fn = undefined,
+	      wrapKey = undefined;
+	
+	  // This is ugly code, but way faster than other
+	  // ways I tried that *looked* pretty
+	
+	  if (descriptor.value) {
+	    fn = descriptor.value;
+	    wrapKey = 'value';
+	  } else if (descriptor.get) {
+	    fn = descriptor.get;
+	    wrapKey = 'get';
+	  } else if (descriptor.set) {
+	    fn = descriptor.set;
+	    wrapKey = 'set';
+	  }
+	
+	  return { fn: fn, wrapKey: wrapKey };
+	}
+	
+	function handleDescriptor(target, key, descriptor) {
+	  console.warn('DEPRECATION: @memoize is deprecated and will be removed shortly. Use @decorate with lodash\'s memoize helper.\n\n  https://github.com/jayphelps/core-decorators.js#decorate');
+	
+	  var _metaForDescriptor = metaForDescriptor(descriptor);
+	
+	  var fn = _metaForDescriptor.fn;
+	  var wrapKey = _metaForDescriptor.wrapKey;
+	
+	  var argumentCache = new WeakMap();
+	  var signatureCache = Object.create(null);
+	  var primativeRefCache = Object.create(null);
+	  var argumentIdCounter = 0;
+	
+	  return _extends({}, descriptor, _defineProperty({}, wrapKey, function memoizeWrapper() {
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+	
+	    var signature = '0';
+	
+	    for (var i = 0, l = args.length; i < l; i++) {
+	      var arg = args[i];
+	      var argRef = toObject(primativeRefCache, arg);
+	      var argKey = argumentCache.get(argRef);
+	
+	      if (argKey === undefined) {
+	        argKey = ++argumentIdCounter;
+	        argumentCache.set(argRef, argKey);
+	      }
+	
+	      signature += argKey;
+	    }
+	
+	    return signatureCache[signature] || applyAndCache(this, fn, arguments, signatureCache, signature);
+	  }));
+	}
+	
+	function memoize() {
+	  for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+	    args[_key2] = arguments[_key2];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 312 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports['default'] = autobind;
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	var defineProperty = Object.defineProperty;
+	var getPrototypeOf = Object.getPrototypeOf;
+	
+	function bind(fn, context) {
+	  if (fn.bind) {
+	    return fn.bind(context);
+	  } else {
+	    return function __autobind__() {
+	      return fn.apply(context, arguments);
+	    };
+	  }
+	}
+	
+	var mapStore = undefined;
+	
+	function getBoundSuper(obj, fn) {
+	  if (typeof WeakMap === 'undefined') {
+	    throw new Error('Using @autobind on ' + fn.name + '() requires WeakMap support due to its use of super.' + fn.name + '()\n      See https://github.com/jayphelps/core-decorators.js/issues/20');
+	  }
+	
+	  if (!mapStore) {
+	    mapStore = new WeakMap();
+	  }
+	
+	  if (mapStore.has(obj) === false) {
+	    mapStore.set(obj, new WeakMap());
+	  }
+	
+	  var superStore = mapStore.get(obj);
+	
+	  if (superStore.has(fn) === false) {
+	    superStore.set(fn, bind(fn, obj));
+	  }
+	
+	  return superStore.get(fn);
+	}
+	
+	function autobindClass(klass) {
+	  var descs = (0, _privateUtils.getOwnPropertyDescriptors)(klass.prototype);
+	  var keys = (0, _privateUtils.getOwnKeys)(descs);
+	
+	  for (var i = 0, l = keys.length; i < l; i++) {
+	    var key = keys[i];
+	    var desc = descs[key];
+	
+	    if (typeof desc.value !== 'function' || key === 'constructor') {
+	      continue;
+	    }
+	
+	    defineProperty(klass.prototype, key, autobindMethod(klass.prototype, key, desc));
+	  }
+	}
+	
+	function autobindMethod(target, key, _ref) {
+	  var fn = _ref.value;
+	  var configurable = _ref.configurable;
+	  var enumerable = _ref.enumerable;
+	
+	  if (typeof fn !== 'function') {
+	    throw new SyntaxError('@autobind can only be used on functions, not: ' + fn);
+	  }
+	
+	  var constructor = target.constructor;
+	
+	  return {
+	    configurable: configurable,
+	    enumerable: enumerable,
+	
+	    get: function get() {
+	      // Class.prototype.key lookup
+	      // Someone accesses the property directly on the prototype on which it is
+	      // actually defined on, i.e. Class.prototype.hasOwnProperty(key)
+	      if (this === target) {
+	        return fn;
+	      }
+	
+	      // Class.prototype.key lookup
+	      // Someone accesses the property directly on a prototype but it was found
+	      // up the chain, not defined directly on it
+	      // i.e. Class.prototype.hasOwnProperty(key) == false && key in Class.prototype
+	      if (this.constructor !== constructor && getPrototypeOf(this).constructor === constructor) {
+	        return fn;
+	      }
+	
+	      // Autobound method calling super.sameMethod() which is also autobound and so on.
+	      if (this.constructor !== constructor && key in this.constructor.prototype) {
+	        return getBoundSuper(this, fn);
+	      }
+	
+	      var boundFn = bind(fn, this);
+	
+	      defineProperty(this, key, {
+	        configurable: true,
+	        writable: true,
+	        // NOT enumerable when it's a bound method
+	        enumerable: false,
+	        value: boundFn
+	      });
+	
+	      return boundFn;
+	    },
+	    set: (0, _privateUtils.createDefaultSetter)(key)
+	  };
+	}
+	
+	function handle(args) {
+	  if (args.length === 1) {
+	    return autobindClass.apply(undefined, _toConsumableArray(args));
+	  } else {
+	    return autobindMethod.apply(undefined, _toConsumableArray(args));
+	  }
+	}
+	
+	function autobind() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  if (args.length === 0) {
+	    return function () {
+	      return handle(arguments);
+	    };
+	  } else {
+	    return handle(args);
+	  }
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports['default'] = readonly;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	function handleDescriptor(target, key, descriptor) {
+	  descriptor.writable = false;
+	  return descriptor;
+	}
+	
+	function readonly() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 314 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports['default'] = enumerable;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	function handleDescriptor(target, key, descriptor) {
+	  descriptor.enumerable = true;
+	  return descriptor;
+	}
+	
+	function enumerable() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 315 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports['default'] = nonenumerable;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	function handleDescriptor(target, key, descriptor) {
+	  descriptor.enumerable = false;
+	  return descriptor;
+	}
+	
+	function nonenumerable() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 316 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports['default'] = nonconfigurable;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	function handleDescriptor(target, key, descriptor) {
+	  descriptor.configurable = false;
+	  return descriptor;
+	}
+	
+	function nonconfigurable() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }; })();
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	exports['default'] = debounce;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	var DEFAULT_TIMEOUT = 300;
+	
+	function handleDescriptor(target, key, descriptor, _ref) {
+	  var _ref2 = _slicedToArray(_ref, 2);
+	
+	  var _ref2$0 = _ref2[0];
+	  var wait = _ref2$0 === undefined ? DEFAULT_TIMEOUT : _ref2$0;
+	  var _ref2$1 = _ref2[1];
+	  var immediate = _ref2$1 === undefined ? false : _ref2$1;
+	
+	  var callback = descriptor.value;
+	
+	  if (typeof callback !== 'function') {
+	    throw new SyntaxError('Only functions can be debounced');
+	  }
+	
+	  return _extends({}, descriptor, {
+	    value: function value() {
+	      var _this = this;
+	
+	      var _metaFor = (0, _privateUtils.metaFor)(this);
+	
+	      var debounceTimeoutIds = _metaFor.debounceTimeoutIds;
+	
+	      var timeout = debounceTimeoutIds[key];
+	      var callNow = immediate && !timeout;
+	      var args = arguments;
+	
+	      clearTimeout(timeout);
+	
+	      debounceTimeoutIds[key] = setTimeout(function () {
+	        delete debounceTimeoutIds[key];
+	        if (!immediate) {
+	          callback.apply(_this, args);
+	        }
+	      }, wait);
+	
+	      if (callNow) {
+	        callback.apply(this, args);
+	      }
+	    }
+	  });
+	}
+	
+	function debounce() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }; })();
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	exports['default'] = throttle;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	var DEFAULT_TIMEOUT = 300;
+	
+	function handleDescriptor(target, key, descriptor, _ref) {
+	  var _ref2 = _slicedToArray(_ref, 2);
+	
+	  var _ref2$0 = _ref2[0];
+	  var wait = _ref2$0 === undefined ? DEFAULT_TIMEOUT : _ref2$0;
+	  var _ref2$1 = _ref2[1];
+	  var options = _ref2$1 === undefined ? {} : _ref2$1;
+	
+	  var callback = descriptor.value;
+	
+	  if (typeof callback !== 'function') {
+	    throw new SyntaxError('Only functions can be throttled');
+	  }
+	
+	  if (options.leading !== false) {
+	    options.leading = true;
+	  }
+	
+	  if (options.trailing !== false) {
+	    options.trailing = true;
+	  }
+	
+	  return _extends({}, descriptor, {
+	    value: function value() {
+	      var _this = this;
+	
+	      var _metaFor = (0, _privateUtils.metaFor)(this);
+	
+	      var throttleTimeoutIds = _metaFor.throttleTimeoutIds;
+	      var throttlePreviousTimestamps = _metaFor.throttlePreviousTimestamps;
+	
+	      var timeout = throttleTimeoutIds[key];
+	      // last execute timestamp
+	      var previous = throttlePreviousTimestamps[key] || 0;
+	      var now = Date.now();
+	      var args = arguments;
+	
+	      // if first be called and disable the execution on the leading edge
+	      // set last execute timestamp to now
+	      if (!previous && options.leading === false) {
+	        previous = now;
+	      }
+	
+	      var remaining = wait - (now - previous);
+	
+	      if (remaining <= 0) {
+	        clearTimeout(timeout);
+	        delete throttleTimeoutIds[key];
+	        throttlePreviousTimestamps[key] = now;
+	        callback.apply(this, args);
+	      } else if (!timeout && options.trailing !== false) {
+	        throttleTimeoutIds[key] = setTimeout(function () {
+	          throttlePreviousTimestamps[key] = options.leading === false ? 0 : Date.now();
+	          delete throttleTimeoutIds[key];
+	          callback.apply(_this, args);
+	        }, remaining);
+	      }
+	    }
+	  });
+	}
+	
+	function throttle() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 319 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports['default'] = decorate;
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+	
+	function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	var defineProperty = Object.defineProperty;
+	
+	function handleDescriptor(target, key, descriptor, _ref) {
+	  var _ref2 = _toArray(_ref);
+	
+	  var decorator = _ref2[0];
+	
+	  var args = _ref2.slice(1);
+	
+	  var configurable = descriptor.configurable;
+	  var enumerable = descriptor.enumerable;
+	  var writable = descriptor.writable;
+	
+	  var originalGet = descriptor.get;
+	  var originalSet = descriptor.set;
+	  var originalValue = descriptor.value;
+	  var isGetter = !!originalGet;
+	
+	  return {
+	    configurable: configurable,
+	    enumerable: enumerable,
+	    get: function get() {
+	      var fn = isGetter ? originalGet.call(this) : originalValue;
+	      var value = decorator.call.apply(decorator, [this, fn].concat(_toConsumableArray(args)));
+	
+	      if (isGetter) {
+	        return value;
+	      } else {
+	        var desc = {
+	          configurable: configurable,
+	          enumerable: enumerable
+	        };
+	
+	        desc.value = value;
+	        desc.writable = writable;
+	
+	        defineProperty(this, key, desc);
+	
+	        return value;
+	      }
+	    },
+	    set: isGetter ? originalSet : (0, _privateUtils.createDefaultSetter)()
+	  };
+	}
+	
+	function decorate() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 320 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports['default'] = mixin;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	var defineProperty = Object.defineProperty;
+	var getPrototypeOf = Object.getPrototypeOf;
+	
+	function buggySymbol(symbol) {
+	  return Object.prototype.toString.call(symbol) === '[object Symbol]' && typeof symbol === 'object';
+	}
+	
+	function hasProperty(prop, obj) {
+	  // We have to traverse manually prototypes' chain for polyfilled ES6 Symbols
+	  // like "in" operator does.
+	  // I.e.: Babel 5 Symbol polyfill stores every created symbol in Object.prototype.
+	  // That's why we cannot use construction like "prop in obj" to check, if needed
+	  // prop actually exists in given object/prototypes' chain.
+	  if (buggySymbol(prop)) {
+	    do {
+	      if (obj === Object.prototype) {
+	        // Polyfill assigns undefined as value for stored symbol key.
+	        // We can assume in this special case if there is nothing assigned it doesn't exist.
+	        return typeof obj[prop] !== 'undefined';
+	      }
+	      if (obj.hasOwnProperty(prop)) {
+	        return true;
+	      }
+	    } while (obj = getPrototypeOf(obj));
+	    return false;
+	  } else {
+	    return prop in obj;
+	  }
+	}
+	
+	function handleClass(target, mixins) {
+	  if (!mixins.length) {
+	    throw new SyntaxError('@mixin() class ' + target.name + ' requires at least one mixin as an argument');
+	  }
+	
+	  for (var i = 0, l = mixins.length; i < l; i++) {
+	    var descs = (0, _privateUtils.getOwnPropertyDescriptors)(mixins[i]);
+	    var keys = (0, _privateUtils.getOwnKeys)(descs);
+	
+	    for (var j = 0, k = keys.length; j < k; j++) {
+	      var key = keys[j];
+	
+	      if (!hasProperty(key, target.prototype)) {
+	        defineProperty(target.prototype, key, descs[key]);
+	      }
+	    }
+	  }
+	}
+	
+	function mixin() {
+	  for (var _len = arguments.length, mixins = Array(_len), _key = 0; _key < _len; _key++) {
+	    mixins[_key] = arguments[_key];
+	  }
+	
+	  if (typeof mixins[0] === 'function') {
+	    return handleClass(mixins[0], []);
+	  } else {
+	    return function (target) {
+	      return handleClass(target, mixins);
+	    };
+	  }
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 321 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }; })();
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	exports['default'] = time;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	var labels = {};
+	
+	// Exported for mocking in tests
+	var defaultConsole = {
+	  time: console.time ? console.time.bind(console) : function (label) {
+	    labels[label] = new Date();
+	  },
+	  timeEnd: console.timeEnd ? console.timeEnd.bind(console) : function (label) {
+	    var timeNow = new Date();
+	    var timeTaken = timeNow - labels[label];
+	    delete labels[label];
+	    console.log(label + ': ' + timeTaken + 'ms');
+	  }
+	};
+	
+	exports.defaultConsole = defaultConsole;
+	var count = 0;
+	
+	function handleDescriptor(target, key, descriptor, _ref) {
+	  var _ref2 = _slicedToArray(_ref, 2);
+	
+	  var _ref2$0 = _ref2[0];
+	  var prefix = _ref2$0 === undefined ? null : _ref2$0;
+	  var _ref2$1 = _ref2[1];
+	  var console = _ref2$1 === undefined ? defaultConsole : _ref2$1;
+	
+	  var fn = descriptor.value;
+	
+	  if (prefix === null) {
+	    prefix = target.constructor.name + '.' + key;
+	  }
+	
+	  if (typeof fn !== 'function') {
+	    throw new SyntaxError('@time can only be used on functions, not: ' + fn);
+	  }
+	
+	  return _extends({}, descriptor, {
+	    value: function value() {
+	      var label = prefix + '-' + count;
+	      count++;
+	      console.time(label);
+	
+	      try {
+	        return fn.apply(this, arguments);
+	      } finally {
+	        console.timeEnd(label);
+	      }
+	    }
+	  });
+	}
+	
+	function time() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+
+/***/ }),
+/* 322 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	exports['default'] = extendDescriptor;
+	
+	var _privateUtils = __webpack_require__(307);
+	
+	var getPrototypeOf = Object.getPrototypeOf;
+	var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+	
+	function handleDescriptor(target, key, descriptor) {
+	  var superKlass = getPrototypeOf(target);
+	  var superDesc = getOwnPropertyDescriptor(superKlass, key);
+	
+	  return _extends({}, superDesc, {
+	    value: descriptor.value,
+	    initializer: descriptor.initializer,
+	    get: descriptor.get || superDesc.get,
+	    set: descriptor.set || superDesc.set
+	  });
+	}
+	
+	function extendDescriptor() {
+	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	    args[_key] = arguments[_key];
+	  }
+	
+	  return (0, _privateUtils.decorate)(handleDescriptor, args);
+	}
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports["default"] = applyDecorators;
+	var defineProperty = Object.defineProperty;
+	var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+	
+	function applyDecorators(Class, props) {
+	  var prototype = Class.prototype;
+	
+	  for (var key in props) {
+	    var decorators = props[key];
+	
+	    for (var i = 0, l = decorators.length; i < l; i++) {
+	      var decorator = decorators[i];
+	
+	      defineProperty(prototype, key, decorator(prototype, key, getOwnPropertyDescriptor(prototype, key)));
+	    }
+	  }
+	
+	  return Class;
+	}
+	
+	module.exports = exports["default"];
+
+/***/ }),
+/* 324 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _redux = __webpack_require__(195);
+	
+	var _reducers = __webpack_require__(300);
+	
+	var _reducers2 = _interopRequireDefault(_reducers);
+	
+	var _reduxLogger = __webpack_require__(325);
+	
+	var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
+	
+	var _reduxThunk = __webpack_require__(331);
+	
+	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)((0, _reduxLogger2.default)({ collapsed: true }), _reduxThunk2.default));
+	
+	exports.default = store;
+
+/***/ }),
+/* 325 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.logger = exports.defaults = undefined;
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _core = __webpack_require__(326);
+	
+	var _helpers = __webpack_require__(327);
+	
+	var _defaults = __webpack_require__(330);
+	
+	var _defaults2 = _interopRequireDefault(_defaults);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * Creates logger with following options
+	 *
+	 * @namespace
+	 * @param {object} options - options for logger
+	 * @param {string | function | object} options.level - console[level]
+	 * @param {boolean} options.duration - print duration of each action?
+	 * @param {boolean} options.timestamp - print timestamp with each action?
+	 * @param {object} options.colors - custom colors
+	 * @param {object} options.logger - implementation of the `console` API
+	 * @param {boolean} options.logErrors - should errors in action execution be caught, logged, and re-thrown?
+	 * @param {boolean} options.collapsed - is group collapsed?
+	 * @param {boolean} options.predicate - condition which resolves logger behavior
+	 * @param {function} options.stateTransformer - transform state before print
+	 * @param {function} options.actionTransformer - transform action before print
+	 * @param {function} options.errorTransformer - transform error before print
+	 *
+	 * @returns {function} logger middleware
+	 */
+	function createLogger() {
+	  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	
+	  var loggerOptions = _extends({}, _defaults2.default, options);
+	
+	  var logger = loggerOptions.logger,
+	      transformer = loggerOptions.transformer,
+	      stateTransformer = loggerOptions.stateTransformer,
+	      errorTransformer = loggerOptions.errorTransformer,
+	      predicate = loggerOptions.predicate,
+	      logErrors = loggerOptions.logErrors,
+	      diffPredicate = loggerOptions.diffPredicate;
+	
+	  // Return if 'console' object is not defined
+	
+	  if (typeof logger === 'undefined') {
+	    return function () {
+	      return function (next) {
+	        return function (action) {
+	          return next(action);
+	        };
+	      };
+	    };
+	  }
+	
+	  if (transformer) {
+	    console.error('Option \'transformer\' is deprecated, use \'stateTransformer\' instead!'); // eslint-disable-line no-console
+	  }
+	
+	  // Detect if 'createLogger' was passed directly to 'applyMiddleware'.
+	  if (options.getState && options.dispatch) {
+	    // eslint-disable-next-line no-console
+	    console.error('[redux-logger] redux-logger not installed. Make sure to pass logger instance as middleware:\n\n// Logger with default options\nimport { logger } from \'redux-logger\'\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n\n\n// Or you can create your own logger with custom options http://bit.ly/redux-logger-options\nimport createLogger from \'redux-logger\'\n\nconst logger = createLogger({\n  // ...options\n});\n\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n');
+	
+	    return function () {
+	      return function (next) {
+	        return function (action) {
+	          return next(action);
+	        };
+	      };
+	    };
+	  }
+	
+	  var logBuffer = [];
+	
+	  return function (_ref) {
+	    var getState = _ref.getState;
+	    return function (next) {
+	      return function (action) {
+	        // Exit early if predicate function returns 'false'
+	        if (typeof predicate === 'function' && !predicate(getState, action)) {
+	          return next(action);
+	        }
+	
+	        var logEntry = {};
+	        logBuffer.push(logEntry);
+	
+	        logEntry.started = _helpers.timer.now();
+	        logEntry.startedTime = new Date();
+	        logEntry.prevState = stateTransformer(getState());
+	        logEntry.action = action;
+	
+	        var returnedValue = void 0;
+	        if (logErrors) {
+	          try {
+	            returnedValue = next(action);
+	          } catch (e) {
+	            logEntry.error = errorTransformer(e);
+	          }
+	        } else {
+	          returnedValue = next(action);
+	        }
+	
+	        logEntry.took = _helpers.timer.now() - logEntry.started;
+	        logEntry.nextState = stateTransformer(getState());
+	
+	        var diff = loggerOptions.diff && typeof diffPredicate === 'function' ? diffPredicate(getState, action) : loggerOptions.diff;
+	
+	        (0, _core.printBuffer)(logBuffer, _extends({}, loggerOptions, { diff: diff }));
+	        logBuffer.length = 0;
+	
+	        if (logEntry.error) throw logEntry.error;
+	        return returnedValue;
+	      };
+	    };
+	  };
+	}
+	
+	var defaultLogger = createLogger();
+	
+	exports.defaults = _defaults2.default;
+	exports.logger = defaultLogger;
+	exports.default = createLogger;
+	module.exports = exports['default'];
+
+
+/***/ }),
+/* 326 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	
+	exports.printBuffer = printBuffer;
+	
+	var _helpers = __webpack_require__(327);
+	
+	var _diff = __webpack_require__(328);
+	
+	var _diff2 = _interopRequireDefault(_diff);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	
+	/**
+	 * Get log level string based on supplied params
+	 *
+	 * @param {string | function | object} level - console[level]
+	 * @param {object} action - selected action
+	 * @param {array} payload - selected payload
+	 * @param {string} type - log entry type
+	 *
+	 * @returns {string} level
+	 */
+	function getLogLevel(level, action, payload, type) {
+	  switch (typeof level === 'undefined' ? 'undefined' : _typeof(level)) {
+	    case 'object':
+	      return typeof level[type] === 'function' ? level[type].apply(level, _toConsumableArray(payload)) : level[type];
+	    case 'function':
+	      return level(action);
+	    default:
+	      return level;
+	  }
+	}
+	
+	function defaultTitleFormatter(options) {
+	  var timestamp = options.timestamp,
+	      duration = options.duration;
+	
+	
+	  return function (action, time, took) {
+	    var parts = ['action'];
+	
+	    parts.push('%c' + String(action.type));
+	    if (timestamp) parts.push('%c@ ' + time);
+	    if (duration) parts.push('%c(in ' + took.toFixed(2) + ' ms)');
+	
+	    return parts.join(' ');
+	  };
+	}
+	
+	function printBuffer(buffer, options) {
+	  var logger = options.logger,
+	      actionTransformer = options.actionTransformer,
+	      _options$titleFormatt = options.titleFormatter,
+	      titleFormatter = _options$titleFormatt === undefined ? defaultTitleFormatter(options) : _options$titleFormatt,
+	      collapsed = options.collapsed,
+	      colors = options.colors,
+	      level = options.level,
+	      diff = options.diff;
+	
+	
+	  buffer.forEach(function (logEntry, key) {
+	    var started = logEntry.started,
+	        startedTime = logEntry.startedTime,
+	        action = logEntry.action,
+	        prevState = logEntry.prevState,
+	        error = logEntry.error;
+	    var took = logEntry.took,
+	        nextState = logEntry.nextState;
+	
+	    var nextEntry = buffer[key + 1];
+	
+	    if (nextEntry) {
+	      nextState = nextEntry.prevState;
+	      took = nextEntry.started - started;
+	    }
+	
+	    // Message
+	    var formattedAction = actionTransformer(action);
+	    var isCollapsed = typeof collapsed === 'function' ? collapsed(function () {
+	      return nextState;
+	    }, action, logEntry) : collapsed;
+	
+	    var formattedTime = (0, _helpers.formatTime)(startedTime);
+	    var titleCSS = colors.title ? 'color: ' + colors.title(formattedAction) + ';' : '';
+	    var headerCSS = ['color: gray; font-weight: lighter;'];
+	    headerCSS.push(titleCSS);
+	    if (options.timestamp) headerCSS.push('color: gray; font-weight: lighter;');
+	    if (options.duration) headerCSS.push('color: gray; font-weight: lighter;');
+	    var title = titleFormatter(formattedAction, formattedTime, took);
+	
+	    // Render
+	    try {
+	      if (isCollapsed) {
+	        if (colors.title) logger.groupCollapsed.apply(logger, ['%c ' + title].concat(headerCSS));else logger.groupCollapsed(title);
+	      } else {
+	        if (colors.title) logger.group.apply(logger, ['%c ' + title].concat(headerCSS));else logger.group(title);
+	      }
+	    } catch (e) {
+	      logger.log(title);
+	    }
+	
+	    var prevStateLevel = getLogLevel(level, formattedAction, [prevState], 'prevState');
+	    var actionLevel = getLogLevel(level, formattedAction, [formattedAction], 'action');
+	    var errorLevel = getLogLevel(level, formattedAction, [error, prevState], 'error');
+	    var nextStateLevel = getLogLevel(level, formattedAction, [nextState], 'nextState');
+	
+	    if (prevStateLevel) {
+	      if (colors.prevState) logger[prevStateLevel]('%c prev state', 'color: ' + colors.prevState(prevState) + '; font-weight: bold', prevState);else logger[prevStateLevel]('prev state', prevState);
+	    }
+	
+	    if (actionLevel) {
+	      if (colors.action) logger[actionLevel]('%c action    ', 'color: ' + colors.action(formattedAction) + '; font-weight: bold', formattedAction);else logger[actionLevel]('action    ', formattedAction);
+	    }
+	
+	    if (error && errorLevel) {
+	      if (colors.error) logger[errorLevel]('%c error     ', 'color: ' + colors.error(error, prevState) + '; font-weight: bold;', error);else logger[errorLevel]('error     ', error);
+	    }
+	
+	    if (nextStateLevel) {
+	      if (colors.nextState) logger[nextStateLevel]('%c next state', 'color: ' + colors.nextState(nextState) + '; font-weight: bold', nextState);else logger[nextStateLevel]('next state', nextState);
+	    }
+	
+	    if (diff) {
+	      (0, _diff2.default)(prevState, nextState, logger, isCollapsed);
+	    }
+	
+	    try {
+	      logger.groupEnd();
+	    } catch (e) {
+	      logger.log('\u2014\u2014 log end \u2014\u2014');
+	    }
+	  });
+	}
+
+/***/ }),
+/* 327 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var repeat = exports.repeat = function repeat(str, times) {
+	  return new Array(times + 1).join(str);
+	};
+	
+	var pad = exports.pad = function pad(num, maxLength) {
+	  return repeat("0", maxLength - num.toString().length) + num;
+	};
+	
+	var formatTime = exports.formatTime = function formatTime(time) {
+	  return pad(time.getHours(), 2) + ":" + pad(time.getMinutes(), 2) + ":" + pad(time.getSeconds(), 2) + "." + pad(time.getMilliseconds(), 3);
+	};
+	
+	// Use performance API if it's available in order to get better precision
+	var timer = exports.timer = typeof performance !== "undefined" && performance !== null && typeof performance.now === "function" ? performance : Date;
+
+/***/ }),
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = diffLogger;
+	
+	var _deepDiff = __webpack_require__(329);
+	
+	var _deepDiff2 = _interopRequireDefault(_deepDiff);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	
+	// https://github.com/flitbit/diff#differences
+	var dictionary = {
+	  'E': {
+	    color: '#2196F3',
+	    text: 'CHANGED:'
+	  },
+	  'N': {
+	    color: '#4CAF50',
+	    text: 'ADDED:'
+	  },
+	  'D': {
+	    color: '#F44336',
+	    text: 'DELETED:'
+	  },
+	  'A': {
+	    color: '#2196F3',
+	    text: 'ARRAY:'
+	  }
+	};
+	
+	function style(kind) {
+	  return 'color: ' + dictionary[kind].color + '; font-weight: bold';
+	}
+	
+	function render(diff) {
+	  var kind = diff.kind,
+	      path = diff.path,
+	      lhs = diff.lhs,
+	      rhs = diff.rhs,
+	      index = diff.index,
+	      item = diff.item;
+	
+	
+	  switch (kind) {
+	    case 'E':
+	      return [path.join('.'), lhs, '\u2192', rhs];
+	    case 'N':
+	      return [path.join('.'), rhs];
+	    case 'D':
+	      return [path.join('.')];
+	    case 'A':
+	      return [path.join('.') + '[' + index + ']', item];
+	    default:
+	      return [];
+	  }
+	}
+	
+	function diffLogger(prevState, newState, logger, isCollapsed) {
+	  var diff = (0, _deepDiff2.default)(prevState, newState);
+	
+	  try {
+	    if (isCollapsed) {
+	      logger.groupCollapsed('diff');
+	    } else {
+	      logger.group('diff');
+	    }
+	  } catch (e) {
+	    logger.log('diff');
+	  }
+	
+	  if (diff) {
+	    diff.forEach(function (elem) {
+	      var kind = elem.kind;
+	
+	      var output = render(elem);
+	
+	      logger.log.apply(logger, ['%c ' + dictionary[kind].text, style(kind)].concat(_toConsumableArray(output)));
+	    });
+	  } else {
+	    logger.log('\u2014\u2014 no diff \u2014\u2014');
+	  }
+	
+	  try {
+	    logger.groupEnd();
+	  } catch (e) {
+	    logger.log('\u2014\u2014 diff end \u2014\u2014 ');
+	  }
+	}
+	module.exports = exports['default'];
+
+/***/ }),
+/* 329 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {/*!
+	 * deep-diff.
+	 * Licensed under the MIT License.
+	 */
+	;(function(root, factory) {
+	  'use strict';
+	  if (true) {
+	    // AMD. Register as an anonymous module.
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	      return factory();
+	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if (typeof exports === 'object') {
+	    // Node. Does not work with strict CommonJS, but
+	    // only CommonJS-like environments that support module.exports,
+	    // like Node.
+	    module.exports = factory();
+	  } else {
+	    // Browser globals (root is window)
+	    root.DeepDiff = factory();
+	  }
+	}(this, function(undefined) {
+	  'use strict';
+	
+	  var $scope, conflict, conflictResolution = [];
+	  if (typeof global === 'object' && global) {
+	    $scope = global;
+	  } else if (typeof window !== 'undefined') {
+	    $scope = window;
+	  } else {
+	    $scope = {};
+	  }
+	  conflict = $scope.DeepDiff;
+	  if (conflict) {
+	    conflictResolution.push(
+	      function() {
+	        if ('undefined' !== typeof conflict && $scope.DeepDiff === accumulateDiff) {
+	          $scope.DeepDiff = conflict;
+	          conflict = undefined;
+	        }
+	      });
+	  }
+	
+	  // nodejs compatible on server side and in the browser.
+	  function inherits(ctor, superCtor) {
+	    ctor.super_ = superCtor;
+	    ctor.prototype = Object.create(superCtor.prototype, {
+	      constructor: {
+	        value: ctor,
+	        enumerable: false,
+	        writable: true,
+	        configurable: true
+	      }
+	    });
+	  }
+	
+	  function Diff(kind, path) {
+	    Object.defineProperty(this, 'kind', {
+	      value: kind,
+	      enumerable: true
+	    });
+	    if (path && path.length) {
+	      Object.defineProperty(this, 'path', {
+	        value: path,
+	        enumerable: true
+	      });
+	    }
+	  }
+	
+	  function DiffEdit(path, origin, value) {
+	    DiffEdit.super_.call(this, 'E', path);
+	    Object.defineProperty(this, 'lhs', {
+	      value: origin,
+	      enumerable: true
+	    });
+	    Object.defineProperty(this, 'rhs', {
+	      value: value,
+	      enumerable: true
+	    });
+	  }
+	  inherits(DiffEdit, Diff);
+	
+	  function DiffNew(path, value) {
+	    DiffNew.super_.call(this, 'N', path);
+	    Object.defineProperty(this, 'rhs', {
+	      value: value,
+	      enumerable: true
+	    });
+	  }
+	  inherits(DiffNew, Diff);
+	
+	  function DiffDeleted(path, value) {
+	    DiffDeleted.super_.call(this, 'D', path);
+	    Object.defineProperty(this, 'lhs', {
+	      value: value,
+	      enumerable: true
+	    });
+	  }
+	  inherits(DiffDeleted, Diff);
+	
+	  function DiffArray(path, index, item) {
+	    DiffArray.super_.call(this, 'A', path);
+	    Object.defineProperty(this, 'index', {
+	      value: index,
+	      enumerable: true
+	    });
+	    Object.defineProperty(this, 'item', {
+	      value: item,
+	      enumerable: true
+	    });
+	  }
+	  inherits(DiffArray, Diff);
+	
+	  function arrayRemove(arr, from, to) {
+	    var rest = arr.slice((to || from) + 1 || arr.length);
+	    arr.length = from < 0 ? arr.length + from : from;
+	    arr.push.apply(arr, rest);
+	    return arr;
+	  }
+	
+	  function realTypeOf(subject) {
+	    var type = typeof subject;
+	    if (type !== 'object') {
+	      return type;
+	    }
+	
+	    if (subject === Math) {
+	      return 'math';
+	    } else if (subject === null) {
+	      return 'null';
+	    } else if (Array.isArray(subject)) {
+	      return 'array';
+	    } else if (Object.prototype.toString.call(subject) === '[object Date]') {
+	      return 'date';
+	    } else if (typeof subject.toString !== 'undefined' && /^\/.*\//.test(subject.toString())) {
+	      return 'regexp';
+	    }
+	    return 'object';
+	  }
+	
+	  function deepDiff(lhs, rhs, changes, prefilter, path, key, stack) {
+	    path = path || [];
+	    var currentPath = path.slice(0);
+	    if (typeof key !== 'undefined') {
+	      if (prefilter) {
+	        if (typeof(prefilter) === 'function' && prefilter(currentPath, key)) { return; }
+	        else if (typeof(prefilter) === 'object') {
+	          if (prefilter.prefilter && prefilter.prefilter(currentPath, key)) { return; }
+	          if (prefilter.normalize) {
+	            var alt = prefilter.normalize(currentPath, key, lhs, rhs);
+	            if (alt) {
+	              lhs = alt[0];
+	              rhs = alt[1];
+	            }
+	          }
+	        }
+	      }
+	      currentPath.push(key);
+	    }
+	
+	    // Use string comparison for regexes
+	    if (realTypeOf(lhs) === 'regexp' && realTypeOf(rhs) === 'regexp') {
+	      lhs = lhs.toString();
+	      rhs = rhs.toString();
+	    }
+	
+	    var ltype = typeof lhs;
+	    var rtype = typeof rhs;
+	    if (ltype === 'undefined') {
+	      if (rtype !== 'undefined') {
+	        changes(new DiffNew(currentPath, rhs));
+	      }
+	    } else if (rtype === 'undefined') {
+	      changes(new DiffDeleted(currentPath, lhs));
+	    } else if (realTypeOf(lhs) !== realTypeOf(rhs)) {
+	      changes(new DiffEdit(currentPath, lhs, rhs));
+	    } else if (Object.prototype.toString.call(lhs) === '[object Date]' && Object.prototype.toString.call(rhs) === '[object Date]' && ((lhs - rhs) !== 0)) {
+	      changes(new DiffEdit(currentPath, lhs, rhs));
+	    } else if (ltype === 'object' && lhs !== null && rhs !== null) {
+	      stack = stack || [];
+	      if (stack.indexOf(lhs) < 0) {
+	        stack.push(lhs);
+	        if (Array.isArray(lhs)) {
+	          var i, len = lhs.length;
+	          for (i = 0; i < lhs.length; i++) {
+	            if (i >= rhs.length) {
+	              changes(new DiffArray(currentPath, i, new DiffDeleted(undefined, lhs[i])));
+	            } else {
+	              deepDiff(lhs[i], rhs[i], changes, prefilter, currentPath, i, stack);
+	            }
+	          }
+	          while (i < rhs.length) {
+	            changes(new DiffArray(currentPath, i, new DiffNew(undefined, rhs[i++])));
+	          }
+	        } else {
+	          var akeys = Object.keys(lhs);
+	          var pkeys = Object.keys(rhs);
+	          akeys.forEach(function(k, i) {
+	            var other = pkeys.indexOf(k);
+	            if (other >= 0) {
+	              deepDiff(lhs[k], rhs[k], changes, prefilter, currentPath, k, stack);
+	              pkeys = arrayRemove(pkeys, other);
+	            } else {
+	              deepDiff(lhs[k], undefined, changes, prefilter, currentPath, k, stack);
+	            }
+	          });
+	          pkeys.forEach(function(k) {
+	            deepDiff(undefined, rhs[k], changes, prefilter, currentPath, k, stack);
+	          });
+	        }
+	        stack.length = stack.length - 1;
+	      }
+	    } else if (lhs !== rhs) {
+	      if (!(ltype === 'number' && isNaN(lhs) && isNaN(rhs))) {
+	        changes(new DiffEdit(currentPath, lhs, rhs));
+	      }
+	    }
+	  }
+	
+	  function accumulateDiff(lhs, rhs, prefilter, accum) {
+	    accum = accum || [];
+	    deepDiff(lhs, rhs,
+	      function(diff) {
+	        if (diff) {
+	          accum.push(diff);
+	        }
+	      },
+	      prefilter);
+	    return (accum.length) ? accum : undefined;
+	  }
+	
+	  function applyArrayChange(arr, index, change) {
+	    if (change.path && change.path.length) {
+	      var it = arr[index],
+	          i, u = change.path.length - 1;
+	      for (i = 0; i < u; i++) {
+	        it = it[change.path[i]];
+	      }
+	      switch (change.kind) {
+	        case 'A':
+	          applyArrayChange(it[change.path[i]], change.index, change.item);
+	          break;
+	        case 'D':
+	          delete it[change.path[i]];
+	          break;
+	        case 'E':
+	        case 'N':
+	          it[change.path[i]] = change.rhs;
+	          break;
+	      }
+	    } else {
+	      switch (change.kind) {
+	        case 'A':
+	          applyArrayChange(arr[index], change.index, change.item);
+	          break;
+	        case 'D':
+	          arr = arrayRemove(arr, index);
+	          break;
+	        case 'E':
+	        case 'N':
+	          arr[index] = change.rhs;
+	          break;
+	      }
+	    }
+	    return arr;
+	  }
+	
+	  function applyChange(target, source, change) {
+	    if (target && source && change && change.kind) {
+	      var it = target,
+	          i = -1,
+	          last = change.path ? change.path.length - 1 : 0;
+	      while (++i < last) {
+	        if (typeof it[change.path[i]] === 'undefined') {
+	          it[change.path[i]] = (typeof change.path[i] === 'number') ? [] : {};
+	        }
+	        it = it[change.path[i]];
+	      }
+	      switch (change.kind) {
+	        case 'A':
+	          applyArrayChange(change.path ? it[change.path[i]] : it, change.index, change.item);
+	          break;
+	        case 'D':
+	          delete it[change.path[i]];
+	          break;
+	        case 'E':
+	        case 'N':
+	          it[change.path[i]] = change.rhs;
+	          break;
+	      }
+	    }
+	  }
+	
+	  function revertArrayChange(arr, index, change) {
+	    if (change.path && change.path.length) {
+	      // the structure of the object at the index has changed...
+	      var it = arr[index],
+	          i, u = change.path.length - 1;
+	      for (i = 0; i < u; i++) {
+	        it = it[change.path[i]];
+	      }
+	      switch (change.kind) {
+	        case 'A':
+	          revertArrayChange(it[change.path[i]], change.index, change.item);
+	          break;
+	        case 'D':
+	          it[change.path[i]] = change.lhs;
+	          break;
+	        case 'E':
+	          it[change.path[i]] = change.lhs;
+	          break;
+	        case 'N':
+	          delete it[change.path[i]];
+	          break;
+	      }
+	    } else {
+	      // the array item is different...
+	      switch (change.kind) {
+	        case 'A':
+	          revertArrayChange(arr[index], change.index, change.item);
+	          break;
+	        case 'D':
+	          arr[index] = change.lhs;
+	          break;
+	        case 'E':
+	          arr[index] = change.lhs;
+	          break;
+	        case 'N':
+	          arr = arrayRemove(arr, index);
+	          break;
+	      }
+	    }
+	    return arr;
+	  }
+	
+	  function revertChange(target, source, change) {
+	    if (target && source && change && change.kind) {
+	      var it = target,
+	          i, u;
+	      u = change.path.length - 1;
+	      for (i = 0; i < u; i++) {
+	        if (typeof it[change.path[i]] === 'undefined') {
+	          it[change.path[i]] = {};
+	        }
+	        it = it[change.path[i]];
+	      }
+	      switch (change.kind) {
+	        case 'A':
+	          // Array was modified...
+	          // it will be an array...
+	          revertArrayChange(it[change.path[i]], change.index, change.item);
+	          break;
+	        case 'D':
+	          // Item was deleted...
+	          it[change.path[i]] = change.lhs;
+	          break;
+	        case 'E':
+	          // Item was edited...
+	          it[change.path[i]] = change.lhs;
+	          break;
+	        case 'N':
+	          // Item is new...
+	          delete it[change.path[i]];
+	          break;
+	      }
+	    }
+	  }
+	
+	  function applyDiff(target, source, filter) {
+	    if (target && source) {
+	      var onChange = function(change) {
+	        if (!filter || filter(target, source, change)) {
+	          applyChange(target, source, change);
+	        }
+	      };
+	      deepDiff(target, source, onChange);
+	    }
+	  }
+	
+	  Object.defineProperties(accumulateDiff, {
+	
+	    diff: {
+	      value: accumulateDiff,
+	      enumerable: true
+	    },
+	    observableDiff: {
+	      value: deepDiff,
+	      enumerable: true
+	    },
+	    applyDiff: {
+	      value: applyDiff,
+	      enumerable: true
+	    },
+	    applyChange: {
+	      value: applyChange,
+	      enumerable: true
+	    },
+	    revertChange: {
+	      value: revertChange,
+	      enumerable: true
+	    },
+	    isConflict: {
+	      value: function() {
+	        return 'undefined' !== typeof conflict;
+	      },
+	      enumerable: true
+	    },
+	    noConflict: {
+	      value: function() {
+	        if (conflictResolution) {
+	          conflictResolution.forEach(function(it) {
+	            it();
+	          });
+	          conflictResolution = null;
+	        }
+	        return accumulateDiff;
+	      },
+	      enumerable: true
+	    }
+	  });
+	
+	  return accumulateDiff;
+	}));
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ }),
+/* 330 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  level: "log",
+	  logger: console,
+	  logErrors: true,
+	  collapsed: undefined,
+	  predicate: undefined,
+	  duration: false,
+	  timestamp: true,
+	  stateTransformer: function stateTransformer(state) {
+	    return state;
+	  },
+	  actionTransformer: function actionTransformer(action) {
+	    return action;
+	  },
+	  errorTransformer: function errorTransformer(error) {
+	    return error;
+	  },
+	  colors: {
+	    title: function title() {
+	      return "inherit";
+	    },
+	    prevState: function prevState() {
+	      return "#9E9E9E";
+	    },
+	    action: function action() {
+	      return "#03A9F4";
+	    },
+	    nextState: function nextState() {
+	      return "#4CAF50";
+	    },
+	    error: function error() {
+	      return "#F20404";
+	    }
+	  },
+	  diff: false,
+	  diffPredicate: undefined,
+	
+	  // Deprecated options
+	  transformer: undefined
+	};
+	module.exports = exports["default"];
+
+/***/ }),
+/* 331 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	exports.__esModule = true;
+	function createThunkMiddleware(extraArgument) {
+	  return function (_ref) {
+	    var dispatch = _ref.dispatch,
+	        getState = _ref.getState;
+	    return function (next) {
+	      return function (action) {
+	        if (typeof action === 'function') {
+	          return action(dispatch, getState, extraArgument);
+	        }
+	
+	        return next(action);
+	      };
+	    };
+	  };
+	}
+	
+	var thunk = createThunkMiddleware();
+	thunk.withExtraArgument = createThunkMiddleware;
+	
+	exports['default'] = thunk;
+
+/***/ }),
+/* 332 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactSpeechRecognition = __webpack_require__(303);
+	
+	var _reactSpeechRecognition2 = _interopRequireDefault(_reactSpeechRecognition);
+	
+	var _reducers = __webpack_require__(300);
+	
+	var _reactRedux = __webpack_require__(186);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// this came with the component
+	var propTypes = {
+	    // Props injected by SpeechRecognition
+	    transcript: _react.PropTypes.string,
+	    resetTranscript: _react.PropTypes.func,
+	    browserSupportsSpeechRecognition: _react.PropTypes.bool
+	};
+	
+	var Dictaphone = function (_Component) {
+	    _inherits(Dictaphone, _Component);
+	
+	    function Dictaphone(props) {
+	        _classCallCheck(this, Dictaphone);
+	
+	        var _this = _possibleConstructorReturn(this, (Dictaphone.__proto__ || Object.getPrototypeOf(Dictaphone)).call(this, props));
+	
+	        _this.clickHandler = _this.clickHandler.bind(_this);
+	
+	        return _this;
+	    }
+	
+	    _createClass(Dictaphone, [{
+	        key: 'clickHandler',
+	        value: function clickHandler(sentence) {
+	            console.log(sentence);
+	            var text = {
+	                content: sentence.transcript //transcribed text is an object - sentence.transcript is a string
+	            };
+	            this.props.fetchText(text);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+	
+	            var _props = this.props,
+	                transcript = _props.transcript,
+	                resetTranscript = _props.resetTranscript,
+	                browserSupportsSpeechRecognition = _props.browserSupportsSpeechRecognition;
+	
+	
+	            if (!browserSupportsSpeechRecognition) {
+	                return null;
+	            }
+	
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'container' },
+	                transcript,
+	                '  ',
+	                _react2.default.createElement('br', null),
+	                ' ',
+	                _react2.default.createElement('br', null),
+	                _react2.default.createElement(
+	                    'button',
+	                    { style: { "margin-right": "5px" }, className: 'btn btn-default', onClick: resetTranscript },
+	                    'Reset'
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'btn btn-default', onClick: function onClick() {
+	                            return _this2.clickHandler({ transcript: transcript });
+	                        } },
+	                    'Stop'
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Dictaphone;
+	}(_react.Component);
+	
+	Dictaphone.propTypes = propTypes;
+	
+	var mapDispatchToProps = { fetchText: _reducers.fetchText };
+	var mapStateToProps = function mapStateToProps(_ref) {
+	    var text = _ref.text;
+	    return { text: text };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)((0, _reactSpeechRecognition2.default)(Dictaphone));
 
 /***/ })
 /******/ ]);

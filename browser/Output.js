@@ -9,7 +9,7 @@ const Output = (props) => {
     return (
         <div>
             <div>
-                <h2>Results</h2>
+                <h3>Results</h3>
                 <h4>Sentiment Score: {props.score.toPrecision(2)}</h4>
                 <h4>Sentiment Magnitude: {props.mag.toPrecision(2)}</h4>
                 <br />
@@ -20,7 +20,7 @@ const Output = (props) => {
                     console.log("METADATA", entity.metadata)
                     console.log("NAME", entity.name)
                     // return(<h5>HElP</h5>)
-                    if (entity.metadata !== undefined &&  !_.isEmpty(entity.metadata) )
+                    if (entity.metadata !== undefined && !_.isEmpty(entity.metadata))
                         return (
                             <div>
                                 <a href={entity.metadata.wikipedia_url}>{entity.name}</a>
@@ -34,20 +34,22 @@ const Output = (props) => {
             </div>
             {(() => {
                 switch (true) {
+                    case props.score === 0:
+                        return <h4>You're feeling: Neutral</h4>
                     case props.score.toPrecision(2) < 0 && props.score >= -0.2:
-                        return <h1>Slightly Negative</h1>
+                        return <h4>You're feeling: Slightly Negative</h4>
                     case props.score < -0.2 && props.score >= -0.4:
-                        return <h1>Negative</h1>
+                        return <h4>You're feeling: Negative</h4>
                     case props.score < -0.4:
-                        return <h1>Strongly Negative</h1>
+                        return <h4>You're feeling: Strongly Negative</h4>
                     case props.score > 0 && props.score <= 0.2:
-                        return <h1>Neutral</h1>
+                        return <h4>You're feeling: Neutral</h4>
                     case props.score > 0.2 && props.score <= 0.4:
-                        return <h1>Slightly Positive</h1>
+                        return <h4>You're feeling: Slightly Positive</h4>
                     case props.score > 0.3 && props.score <= 0.5:
-                        return <h1>Positive</h1>
+                        return <h4>You're feeling: Positive</h4>
                     case props.score > 0.5:
-                        return <h1>Strongly Positive</h1>
+                        return <h4>You're feeling: Strongly Positive</h4>
                     default:
                         null
                 }

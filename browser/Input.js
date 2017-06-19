@@ -37,17 +37,15 @@ class Input extends React.Component {
         }
         return (
             <div className="container">
-                <h1 size="200"> SAY WHAT? </h1>
-                <style>
-
-                </style>
+                <img src={"http://i.imgur.com/7QMBqPn.png"} />
+                <h3 class="display-4">Text Input</h3>
                 <form onSubmit={this.submitHandler}>
                     <div className="form-group">
-                        <textarea name="text" rows="10" className="form-control" placeholder="Say This" />
+                        <textarea color= "#FFF" name="text" rows="5" className="form-control" placeholder="Say This" />
                         <button style={{ "margin": "10px" }} id="sentimentBtn" className="btn btn-lg btn-primary" type="Submit">Submit</button>
                     </div>
                 </form>
-                <h2>Audio Input</h2>
+                <h3 class="display-4">Audio Input</h3>
                 <button style={{ "margin": "10px" }} className="btn btn-success" type="submit" onClick={() => this.clickHandler()}>Start Recoring</button>
 
                 {this.props.showComponent === true ?
