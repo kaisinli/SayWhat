@@ -12,6 +12,7 @@ const language = Language({
     projectId: projectId
 });
 
+
 //----------------------------------------------------------------------------------------------------
 //body-parsing
 app.use('/', bodyParser.json());
@@ -30,23 +31,36 @@ app.post('/api/text', (req, res, next) => {
     // The text to analyze
     console.log('REQ.BODY.CONTENT ==========', req.body.content)
     const text = req.body.content;
-
     // Detects the sentiment of the text
-    language.detectSentiment(text)
+    return language.detectSentiment(text)
         .then((results) => {
-            const sentiment = results[0];
-            console.log(`Text: ${text}`);
-            console.log(`Sentiment score: ${sentiment.score}`);
-            console.log(`Sentiment magnitude: ${sentiment.magnitude}`);
-            res.send(sentiment)
+            const document = language.document({ content: text });
+            document.detectEntities(text)
+                .then((result) => {
+                    console.log('ENTITIES RESULT:', result[1].entities)
+                    const entities = result[1].entities;
+                    const sentiment = results[0]
+                    console.log('sent', sentiment, 'ent', result, "fofoorororo")
+                    res.send({ sentiment: sentiment, entities: entities })
+                })
         })
+        // res.send(sentiment)
         .catch((err) => {
             console.error('ERROR:', err);
         });
 })
+
 
 //----------------------------------------------------------------------------------------------------
 
 app.listen(3000, () => console.log('Listening on port 3000'))
 
 module.exports = app;
+
+// [ { name: 'Donald Trump',
+//     type: 'PERSON',
+//     metadata:
+//      { mid: '/m/0cqt90',
+//        wikipedia_url: 'http://en.wikipedia.org/wiki/Donald_Trump' },
+//     salience: 1,
+//     mentions: [ [Object] ] } ]

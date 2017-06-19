@@ -1,0 +1,7 @@
+ya29.GltqBHkzHiPjAA-D3uCc_fDHJ7zZk3T21nMC3srQjIYgQYwF2xgN1nDJm_e-g3DmH66ymi-zeEEbP6Jon13pTSgU6VGfKeeibUCbQde7jiF6baDf5IYYjh1GJ9u7
+
+curl "https://language.googleapis.com/v1beta1/documents:analyzeEntities?key=${Say_What_API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @entity-request.json
+
+  curl "https://language.googleapis.com/v1beta1/documents:analyzeEntities?key=${API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @request.json
