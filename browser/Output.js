@@ -35,21 +35,21 @@ const Output = (props) => {
             {(() => {
                 switch (true) {
                     case props.score === 0:
-                        return <h4>You're feeling: Neutral</h4>
+                        return <h3>You're feeling: Neutral</h3>
                     case props.score.toPrecision(2) < 0 && props.score >= -0.2:
-                        return <h4>You're feeling: Slightly Negative</h4>
+                        return <h3>You're feeling: Slightly Negative</h3>
                     case props.score < -0.2 && props.score >= -0.4:
-                        return <h4>You're feeling: Negative</h4>
+                        return <h3>You're feeling: Negative</h3>
                     case props.score < -0.4:
-                        return <h4>You're feeling: Strongly Negative</h4>
+                        return <h3>You're feeling: Strongly Negative</h3>
                     case props.score > 0 && props.score <= 0.2:
-                        return <h4>You're feeling: Neutral</h4>
+                        return <h3>You're feeling: Neutral</h3>
                     case props.score > 0.2 && props.score <= 0.4:
-                        return <h4>You're feeling: Slightly Positive</h4>
+                        return <h3>You're feeling: Slightly Positive</h3>
                     case props.score > 0.3 && props.score <= 0.5:
-                        return <h4>You're feeling: Positive</h4>
+                        return <h3>You're feeling: Positive</h3>
                     case props.score > 0.5:
-                        return <h4>You're feeling: Strongly Positive</h4>
+                        return <h3>You're feeling: Strongly Positive</h3>
                     default:
                         null
                 }

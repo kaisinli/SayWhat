@@ -37,12 +37,12 @@ class Input extends React.Component {
         }
         return (
             <div className="container">
-                <img src={"http://i.imgur.com/7QMBqPn.png"} />
+                <img src={"http://i.imgur.com/9ySNjab.png"} />
                 <h3 class="display-4">Text Input</h3>
                 <form onSubmit={this.submitHandler}>
                     <div className="form-group">
                         <textarea color= "#FFF" name="text" rows="5" className="form-control" placeholder="Say This" />
-                        <button style={{ "margin": "10px" }} id="sentimentBtn" className="btn btn-lg btn-primary" type="Submit">Submit</button>
+                        <button style={{ "margin": "10px" }} id="sentimentBtn" className="btn btn-primary" type="Submit">Submit</button>
                     </div>
                 </form>
                 <h3 class="display-4">Audio Input</h3>

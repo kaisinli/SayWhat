@@ -29394,7 +29394,7 @@
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'container' },
-	                _react2.default.createElement('img', { src: "http://i.imgur.com/7QMBqPn.png" }),
+	                _react2.default.createElement('img', { src: "http://i.imgur.com/9ySNjab.png" }),
 	                _react2.default.createElement(
 	                    'h3',
 	                    { 'class': 'display-4' },
@@ -29409,7 +29409,7 @@
 	                        _react2.default.createElement('textarea', { color: '#FFF', name: 'text', rows: '5', className: 'form-control', placeholder: 'Say This' }),
 	                        _react2.default.createElement(
 	                            'button',
-	                            { style: { "margin": "10px" }, id: 'sentimentBtn', className: 'btn btn-lg btn-primary', type: 'Submit' },
+	                            { style: { "margin": "10px" }, id: 'sentimentBtn', className: 'btn btn-primary', type: 'Submit' },
 	                            'Submit'
 	                        )
 	                    )
@@ -31180,49 +31180,49 @@
 	            switch (true) {
 	                case props.score === 0:
 	                    return _react2.default.createElement(
-	                        'h4',
+	                        'h3',
 	                        null,
 	                        'You\'re feeling: Neutral'
 	                    );
 	                case props.score.toPrecision(2) < 0 && props.score >= -0.2:
 	                    return _react2.default.createElement(
-	                        'h4',
+	                        'h3',
 	                        null,
 	                        'You\'re feeling: Slightly Negative'
 	                    );
 	                case props.score < -0.2 && props.score >= -0.4:
 	                    return _react2.default.createElement(
-	                        'h4',
+	                        'h3',
 	                        null,
 	                        'You\'re feeling: Negative'
 	                    );
 	                case props.score < -0.4:
 	                    return _react2.default.createElement(
-	                        'h4',
+	                        'h3',
 	                        null,
 	                        'You\'re feeling: Strongly Negative'
 	                    );
 	                case props.score > 0 && props.score <= 0.2:
 	                    return _react2.default.createElement(
-	                        'h4',
+	                        'h3',
 	                        null,
 	                        'You\'re feeling: Neutral'
 	                    );
 	                case props.score > 0.2 && props.score <= 0.4:
 	                    return _react2.default.createElement(
-	                        'h4',
+	                        'h3',
 	                        null,
 	                        'You\'re feeling: Slightly Positive'
 	                    );
 	                case props.score > 0.3 && props.score <= 0.5:
 	                    return _react2.default.createElement(
-	                        'h4',
+	                        'h3',
 	                        null,
 	                        'You\'re feeling: Positive'
 	                    );
 	                case props.score > 0.5:
 	                    return _react2.default.createElement(
-	                        'h4',
+	                        'h3',
 	                        null,
 	                        'You\'re feeling: Strongly Positive'
 	                    );
