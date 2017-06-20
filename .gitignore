@@ -4,3 +4,8 @@ google-cloud-sdk
 #nodemodule
 node_modules
 
+#service account
+Say-What-3aa99a7d148a.json
+
+#google-credentials
+google-credentials.js
