@@ -31149,12 +31149,12 @@
 	                props.mag.toPrecision(2)
 	            ),
 	            _react2.default.createElement('br', null),
+	            console.log('PROPS.ENTITIES', props.entities),
 	            _react2.default.createElement(
 	                'h3',
 	                null,
 	                'More Information:'
 	            ),
-	            console.log('PROPS.ENTITIES', props.entities),
 	            _react2.default.createElement(
 	                'h4',
 	                null,
@@ -31168,7 +31168,7 @@
 	                        null,
 	                        _react2.default.createElement(
 	                            'a',
-	                            { href: entity.metadata.wikipedia_url },
+	                            { href: entity.metadata.wikipedia_url, target: '_blank' },
 	                            entity.name
 	                        ),
 	                        _react2.default.createElement('br', null)
@@ -31178,53 +31178,52 @@
 	        ),
 	        function () {
 	            switch (true) {
-	                case props.score === 0:
+	                case props.score.toPrecision(2) < -0.4:
 	                    return _react2.default.createElement(
 	                        'h3',
 	                        null,
-	                        'You\'re feeling: Neutral'
+	                        'This article is: ',
+	                        _react2.default.createElement(
+	                            'b',
+	                            null,
+	                            'Strongly Negative'
+	                        )
 	                    );
-	                case props.score.toPrecision(2) < 0 && props.score >= -0.2:
+	                case props.score.toPrecision(2) < -0.2 && props.score.toPrecision(2) >= -0.4:
 	                    return _react2.default.createElement(
 	                        'h3',
 	                        null,
-	                        'You\'re feeling: Slightly Negative'
+	                        'This article is: Negative'
 	                    );
-	                case props.score < -0.2 && props.score >= -0.4:
+	                case props.score.toPrecision(2) < -0.1 && props.score.toPrecision(2) >= -0.2:
 	                    return _react2.default.createElement(
 	                        'h3',
 	                        null,
-	                        'You\'re feeling: Negative'
+	                        'This article is: Slightly Negative'
 	                    );
-	                case props.score < -0.4:
+	                case props.score.toPrecision(2) < 0.1 && props.score.toPrecision(2) >= -0.1:
 	                    return _react2.default.createElement(
 	                        'h3',
 	                        null,
-	                        'You\'re feeling: Strongly Negative'
+	                        'This article is: Neutral'
 	                    );
-	                case props.score > 0 && props.score <= 0.2:
+	                case props.score.toPrecision(2) < 0.2 && props.score.toPrecision(2) >= 0.1:
 	                    return _react2.default.createElement(
 	                        'h3',
 	                        null,
-	                        'You\'re feeling: Neutral'
+	                        'This article is: Slightly Positive'
 	                    );
-	                case props.score > 0.2 && props.score <= 0.4:
+	                case props.score.toPrecision(2) < 0.4 && props.score.toPrecision(2) >= 0.2:
 	                    return _react2.default.createElement(
 	                        'h3',
 	                        null,
-	                        'You\'re feeling: Slightly Positive'
+	                        'This article is: Positive'
 	                    );
-	                case props.score > 0.3 && props.score <= 0.5:
+	                case props.score.toPrecision(2) > 0.4:
 	                    return _react2.default.createElement(
 	                        'h3',
 	                        null,
-	                        'You\'re feeling: Positive'
-	                    );
-	                case props.score > 0.5:
-	                    return _react2.default.createElement(
-	                        'h3',
-	                        null,
-	                        'You\'re feeling: Strongly Positive'
+	                        'This article is: Strongly Positive'
 	                    );
 	                default:
 	                    null;

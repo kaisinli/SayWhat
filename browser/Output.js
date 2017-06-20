@@ -13,8 +13,8 @@ const Output = (props) => {
                 <h4>Sentiment Score: {props.score.toPrecision(2)}</h4>
                 <h4>Sentiment Magnitude: {props.mag.toPrecision(2)}</h4>
                 <br />
-                <h3>More Information:</h3>
                 {console.log('PROPS.ENTITIES', props.entities)}
+                <h3>More Information:</h3>
                 <h4>{props.entities.map(entity => {
 
                     console.log("METADATA", entity.metadata)
@@ -23,7 +23,7 @@ const Output = (props) => {
                     if (entity.metadata !== undefined && !_.isEmpty(entity.metadata))
                         return (
                             <div>
-                                <a href={entity.metadata.wikipedia_url}>{entity.name}</a>
+                                <a href={entity.metadata.wikipedia_url} target="_blank">{entity.name}</a>
                                 <br />
                             </div>
                         )
@@ -34,22 +34,20 @@ const Output = (props) => {
             </div>
             {(() => {
                 switch (true) {
-                    case props.score === 0:
-                        return <h3>You're feeling: Neutral</h3>
-                    case props.score.toPrecision(2) < 0 && props.score >= -0.2:
-                        return <h3>You're feeling: Slightly Negative</h3>
-                    case props.score < -0.2 && props.score >= -0.4:
-                        return <h3>You're feeling: Negative</h3>
-                    case props.score < -0.4:
-                        return <h3>You're feeling: Strongly Negative</h3>
-                    case props.score > 0 && props.score <= 0.2:
-                        return <h3>You're feeling: Neutral</h3>
-                    case props.score > 0.2 && props.score <= 0.4:
-                        return <h3>You're feeling: Slightly Positive</h3>
-                    case props.score > 0.3 && props.score <= 0.5:
-                        return <h3>You're feeling: Positive</h3>
-                    case props.score > 0.5:
-                        return <h3>You're feeling: Strongly Positive</h3>
+                    case props.score.toPrecision(2) < -0.4:
+                        return <h3>This article is: <b>Strongly Negative</b></h3>
+                    case props.score.toPrecision(2) < -0.2 && props.score.toPrecision(2) >= -0.4:
+                        return <h3>This article is: Negative</h3>
+                    case props.score.toPrecision(2) < -0.1 && props.score.toPrecision(2) >= -0.2:
+                        return <h3>This article is: Slightly Negative</h3>
+                    case props.score.toPrecision(2) < 0.1 && props.score.toPrecision(2) >= -0.1:
+                        return <h3>This article is: Neutral</h3>
+                    case props.score.toPrecision(2) < 0.2 && props.score.toPrecision(2) >= 0.1:
+                        return <h3>This article is: Slightly Positive</h3>
+                    case props.score.toPrecision(2) < 0.4 && props.score.toPrecision(2) >= 0.2:
+                        return <h3>This article is: Positive</h3>
+                    case props.score.toPrecision(2) > 0.4:
+                        return <h3>This article is: Strongly Positive</h3>
                     default:
                         null
                 }

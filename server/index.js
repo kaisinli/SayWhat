@@ -56,11 +56,3 @@ app.post('/api/text', (req, res, next) => {
 app.listen(3000, () => console.log('Listening on port 3000'))
 
 module.exports = app;
-
-// [ { name: 'Donald Trump',
-//     type: 'PERSON',
-//     metadata:
-//      { mid: '/m/0cqt90',
-//        wikipedia_url: 'http://en.wikipedia.org/wiki/Donald_Trump' },
-//     salience: 1,
-//     mentions: [ [Object] ] } ]
