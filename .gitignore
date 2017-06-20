@@ -9,3 +9,7 @@ Say-What-3aa99a7d148a.json
 
 #google-credentials
 google-credentials.js
+
+#compiled js
+public/bundle.js
+public/bundle.js.map
