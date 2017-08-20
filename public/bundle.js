@@ -29349,8 +29349,6 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	console.log(_reducers.fetchText);
-	
 	var Input = function (_React$Component) {
 	    _inherits(Input, _React$Component);
 	
@@ -29369,7 +29367,6 @@
 	        key: 'submitHandler',
 	        value: function submitHandler(event) {
 	            event.preventDefault();
-	            console.log("event", event.target.text.value, event.target);
 	            var text = {
 	                content: event.target.text.value
 	            };
@@ -29379,18 +29376,13 @@
 	        key: 'clickHandler',
 	        value: function clickHandler() {
 	
-	            console.log("TSTS");
 	            _store2.default.dispatch(this.props.buttonClick());
-	            console.log("!");
 	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
 	            var _this2 = this;
 	
-	            {
-	                console.log(this.props, "props");
-	            }
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'container' },
@@ -29427,8 +29419,7 @@
 	                    'Start Recoring'
 	                ),
 	                this.props.showComponent === true ? _react2.default.createElement(_Dict2.default, null) : null,
-	                _react2.default.createElement(_Output2.default, { mag: this.props.text.sentiment.magnitude, score: this.props.text.sentiment.score, entities: this.props.text.entities }),
-	                console.log("input PROPZ", this.props.text.entities)
+	                _react2.default.createElement(_Output2.default, { mag: this.props.text.sentiment.magnitude, score: this.props.text.sentiment.score, entities: this.props.text.entities })
 	            );
 	        }
 	    }]);
@@ -31017,18 +31008,12 @@
 	    case GET_TEXT:
 	      return Object.assign({}, state, { text: action.text });
 	    case CLICK:
-	      console.log(state.showComponent, "Component");
 	      var show = !state.showComponent;
-	      console.log('statehow', show, 'state', state.showComponent, "!!!$^#^#", state);
 	      return Object.assign({}, state, { showComponent: true });
 	    case STOP:
 	      return Object.assign({}, state, { showComponent: false });
 	    case PUSHSCORE:
-	      console.log("actions", action
-	      //   return [action.scoreList, ...action.scores]
-	
-	
-	      );default:
+	    default:
 	      return state;
 	  }
 	};
@@ -31078,20 +31063,11 @@
 	      return dispatch(getText(res.data));
 	    }).catch(function (err) {
 	      return console.error('Fetching text unsuccessful', err);
-	    }
-	
-	    // export const fetchTextEntities = (text) =>
-	    //   dispatch =>
-	    //     axios.post('/api/text/entities', text)
-	    //       .then(res =>
-	    //         dispatch(getText(res.data))
-	    //       )
-	    //       .catch(err => console.error('Fetching text for entities unsuccessful', err))
-	
-	
-	    );
+	    });
 	  };
-	};exports.default = reducer;
+	};
+	
+	exports.default = reducer;
 
 /***/ }),
 /* 301 */
@@ -31122,9 +31098,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Output = function Output(props) {
-	    {
-	        console.log('props output', props);
-	    }
 	    return _react2.default.createElement(
 	        'div',
 	        null,
@@ -31149,7 +31122,6 @@
 	                props.mag.toPrecision(2)
 	            ),
 	            _react2.default.createElement('br', null),
-	            console.log('PROPS.ENTITIES', props.entities),
 	            _react2.default.createElement(
 	                'h3',
 	                null,
@@ -31159,11 +31131,7 @@
 	                'h4',
 	                null,
 	                props.entities.map(function (entity) {
-	
-	                    console.log("METADATA", entity.metadata);
-	                    console.log("NAME", entity.name
-	                    // return(<h5>HElP</h5>)
-	                    );if (entity.metadata !== undefined && !_.isEmpty(entity.metadata)) return _react2.default.createElement(
+	                    if (entity.metadata !== undefined && !_.isEmpty(entity.metadata)) return _react2.default.createElement(
 	                        'div',
 	                        null,
 	                        _react2.default.createElement(
@@ -51001,7 +50969,6 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	// this came with the component
 	var propTypes = {
 	    // Props injected by SpeechRecognition
 	    transcript: _react.PropTypes.string,
@@ -51025,9 +50992,8 @@
 	    _createClass(Dictaphone, [{
 	        key: 'clickHandler',
 	        value: function clickHandler(sentence) {
-	            console.log(sentence);
 	            var text = {
-	                content: sentence.transcript //transcribed text is an object - sentence.transcript is a string
+	                content: sentence.transcript
 	            };
 	            this.props.fetchText(text);
 	        }
@@ -51050,7 +51016,6 @@
 	                'div',
 	                { className: 'container' },
 	                transcript,
-	                '  ',
 	                _react2.default.createElement('br', null),
 	                ' ',
 	                _react2.default.createElement('br', null),

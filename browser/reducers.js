@@ -22,18 +22,12 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_TEXT:
       return Object.assign({}, state, { text: action.text })
-    case CLICK:
-      console.log(state.showComponent, "Component")
+    case CLICK:     
       let show = !state.showComponent
-      console.log('statehow', show, 'state', state.showComponent, "!!!$^#^#", state)
       return Object.assign({}, state, { showComponent: true })
     case STOP:
       return Object.assign({}, state, { showComponent: false })
     case PUSHSCORE:
-    console.log("actions", action)
-    //   return [action.scoreList, ...action.scores]
-
-
     default:
       return state
   }
@@ -85,14 +79,5 @@ export const fetchText = (text) =>
         dispatch(getText(res.data))
       )
       .catch(err => console.error('Fetching text unsuccessful', err))
-
-// export const fetchTextEntities = (text) =>
-//   dispatch =>
-//     axios.post('/api/text/entities', text)
-//       .then(res =>
-//         dispatch(getText(res.data))
-//       )
-//       .catch(err => console.error('Fetching text for entities unsuccessful', err))
-
 
 export default reducer

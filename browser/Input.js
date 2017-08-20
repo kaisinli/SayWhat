@@ -7,7 +7,6 @@ import SpeechRecognition from 'react-speech-recognition'
 import store from './store'
 import Dict from './Dict'
 
-console.log(fetchText)
 class Input extends React.Component {
     constructor(props) {
         super(props)
@@ -17,7 +16,6 @@ class Input extends React.Component {
     }
     submitHandler(event) {
         event.preventDefault()
-        console.log("event", event.target.text.value, event.target)
         const text = {
             content: event.target.text.value
         }
@@ -26,15 +24,10 @@ class Input extends React.Component {
     }
     clickHandler() {
 
-        console.log("TSTS")
         store.dispatch(this.props.buttonClick())
-        console.log("!")
     }
 
     render() {
-        {
-            console.log(this.props, "props")
-        }
         return (
             <div className="container">
                 <img src={"http://i.imgur.com/9ySNjab.png"} />
@@ -52,7 +45,6 @@ class Input extends React.Component {
                     <Dict />
                     : null}
                 <Output mag={this.props.text.sentiment.magnitude} score={this.props.text.sentiment.score} entities={this.props.text.entities} />
-                {console.log("input PROPZ", this.props.text.entities)}
             </div>
         )
     }

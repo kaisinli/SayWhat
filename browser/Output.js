@@ -5,7 +5,6 @@ import { pushScore, pushMag } from './reducers'
 import lodash from "lodash"
 
 const Output = (props) => {
-    { console.log('props output', props) }
     return (
         <div>
             <div>
@@ -13,13 +12,8 @@ const Output = (props) => {
                 <h4>Sentiment Score: {props.score.toPrecision(2)}</h4>
                 <h4>Sentiment Magnitude: {props.mag.toPrecision(2)}</h4>
                 <br />
-                {console.log('PROPS.ENTITIES', props.entities)}
                 <h3>More Information:</h3>
                 <h4>{props.entities.map(entity => {
-
-                    console.log("METADATA", entity.metadata)
-                    console.log("NAME", entity.name)
-                    // return(<h5>HElP</h5>)
                     if (entity.metadata !== undefined && !_.isEmpty(entity.metadata))
                         return (
                             <div>
@@ -27,9 +21,7 @@ const Output = (props) => {
                                 <br />
                             </div>
                         )
-                })
-                }
-
+                })}
                 </h4>
             </div>
             {(() => {
