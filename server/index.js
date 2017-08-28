@@ -40,7 +40,6 @@ app.post('/api/text', (req, res, next) => {
                     console.log('ENTITIES RESULT:', result[1].entities)
                     const entities = result[1].entities;
                     const sentiment = results[0]
-                    console.log('sent', sentiment, 'ent', result, "fofoorororo")
                     res.send({ sentiment: sentiment, entities: entities })
                 })
         })
